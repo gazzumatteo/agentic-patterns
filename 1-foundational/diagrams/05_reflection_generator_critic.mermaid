@@ -1,0 +1,56 @@
+```mermaid
+graph TB
+    A[Initial Request] --> B[Generator Agent]
+    B --> C[Draft Output]
+    C --> D[Critic Agent]
+    D --> E{Quality<br/>Check}
+    E -->|Fail| F[Feedback]
+    F --> B
+    E -->|Pass| G[Final Output]
+    style B fill:#4285f4,color:#fff
+    style D fill:#ea4335,color:#fff
+    style G fill:#34a853,color:#fff
+```
+
+**Pattern**: Reflection/Generator-Critic
+**Type**: Foundational + Quality Assurance
+**Framework Support**: Google ADK (SequentialAgent), CrewAI (Multi-agent Crew)
+
+**Key Characteristics**:
+- **Self-Evaluation**: Built-in quality checks
+- **Iterative Refinement**: Improves through feedback
+- **Quality Thresholds**: Defined acceptance criteria
+- **Transparent**: Clear reasoning for changes
+
+**Business Value**:
+- **Quality Assurance**: Consistent output standards
+- **Error Reduction**: Self-correction before delivery
+- **Compliance**: Policy enforcement
+- **Auditability**: Documented improvement process
+
+**Use Cases**:
+- Contract negotiation
+- Legal document generation
+- Financial reporting
+- Creative content review
+- Code review
+- Strategic planning
+- High-stakes communications
+
+**Real Example**:
+LegalTech Solutions implemented reflection pattern for contract generation, achieving 78% automation rate, 95% compliance (up from 71%), and 6-hour turnaround (down from 3 days).
+
+**When to Use**:
+- Quality matters more than speed
+- Mistakes are costly
+- Compliance is critical
+- Brand reputation at stake
+- Multiple review rounds currently used
+- Regulated industries
+
+**Iteration Control**:
+- **Max Iterations**: Prevent infinite loops
+- **Quality Threshold**: Define "good enough"
+- **Feedback Specificity**: Clear improvement guidance
+- **Exit Conditions**: Multiple success criteria
+- **Escalation**: Human review when threshold not met

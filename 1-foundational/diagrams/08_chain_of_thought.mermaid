@@ -1,0 +1,70 @@
+```mermaid
+graph TB
+    A[Problem] --> B[LlmAgent<br/>with CoT Prompt]
+    B --> C[Step 1:<br/>Analyze]
+    C --> D[Step 2:<br/>Reason]
+    D --> E[Step 3:<br/>Conclude]
+    E --> F[Reasoning<br/>Chain]
+    F --> G[Final<br/>Answer]
+    style B fill:#4285f4,color:#fff
+    style F fill:#34a853,color:#fff
+```
+
+**Pattern**: Chain-of-Thought (CoT)
+**Type**: Foundational + Reasoning
+**Framework Support**: Google ADK (system_prompt), CrewAI (llm_config)
+
+**Key Characteristics**:
+- **Explicit Reasoning**: Shows step-by-step thinking
+- **Transparent**: Every decision is documented
+- **Structured**: Follows consistent reasoning format
+- **Auditable**: Complete trail from problem to solution
+
+**Business Value**:
+- **Compliance**: Satisfies audit requirements
+- **Trust**: Builds confidence through transparency
+- **Debugging**: Easy to identify logic errors
+- **Quality**: Structured thinking improves accuracy
+
+**Use Cases**:
+- Financial auditing
+- Compliance reviews
+- Risk assessments
+- Loan decisions
+- Investment recommendations
+- Medical treatment suggestions
+- Regulatory submissions
+
+**Real Example**:
+Big4 Auditor implemented CoT for expense validation, achieving 60% reduction in audit time with 100% traceable decisions for compliance.
+
+**When to Use**:
+- Transparent decision-making required
+- Auditability is critical
+- Decisions may be challenged
+- Regulated industries
+- Trust is paramount
+- Debugging complex logic
+- Compliance documentation needed
+
+**CoT Structure**:
+1. **Identify Problem**: Clear problem statement
+2. **List Information**: Relevant facts and data
+3. **Apply Rules**: Business logic and policies
+4. **Show Reasoning**: Step-by-step logic
+5. **Provide Conclusion**: Final decision with justification
+
+**Key Benefits**:
+- **Transparency**: Glass-box AI vs black-box
+- **Accountability**: Every step documented
+- **Debugging**: Easy to spot errors
+- **Compliance**: Satisfies regulatory requirements
+- **Trust**: Stakeholders understand decisions
+- **Quality**: Structured thinking reduces errors
+
+**Implementation Tips**:
+- Use clear step numbering
+- Document each decision point
+- Include policy references
+- Show all calculations
+- Provide final summary

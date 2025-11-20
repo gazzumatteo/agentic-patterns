@@ -1,0 +1,50 @@
+```mermaid
+graph TB
+    A[User Input] --> B[Session Manager]
+    B --> C[LlmAgent]
+    C --> D[Memory Service]
+    D -->|Context| C
+    C --> E[Response]
+    D -->|Store| F[Vector DB/<br/>InMemory Store]
+    style C fill:#4285f4,color:#fff
+    style D fill:#fbbc04,color:#000
+```
+
+**Pattern**: Memory-Augmented Agent
+**Type**: Foundational + Memory
+**Framework Support**: Google ADK (VertexAiRagMemoryService), CrewAI (LongTermMemory)
+
+**Key Characteristics**:
+- **Persistent Context**: Maintains state across interactions
+- **Contextual Awareness**: Remembers past conversations and decisions
+- **Adaptive**: Improves without model retraining
+- **Stateful**: Each interaction builds on history
+
+**Business Value**:
+- **Personalization**: Context-aware responses
+- **Relationship Continuity**: Builds on past interactions
+- **Continuous Learning**: Improves over time
+- **Competitive Advantage**: Memory creates differentiation
+
+**Use Cases**:
+- Personalized sales assistants
+- Customer support with history
+- Account management
+- Long-term client relationships
+- Progressive task completion
+
+**Real Example**:
+RetailFlow implemented memory-augmented sales agents, achieving 34% increase in upsell rate, 28% reduction in churn, and $12K increase in average deal size.
+
+**When to Use**:
+- Customer-facing applications
+- Relationship-based processes
+- Historical context matters
+- Personalization drives value
+- Continuous improvement needed
+
+**Memory Types**:
+- **Short-term**: Session/conversation memory
+- **Long-term**: Cross-session persistence
+- **Vector stores**: Semantic search and retrieval
+- **Structured**: Relational data and facts

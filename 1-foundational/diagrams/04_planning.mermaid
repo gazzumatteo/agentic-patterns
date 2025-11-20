@@ -1,0 +1,55 @@
+```mermaid
+graph TB
+    A[Complex Goal] --> B[Planning Agent]
+    B --> C[Decompose into Steps]
+    C --> D[Step 1:<br/>Data Collection]
+    D --> E[Step 2:<br/>Analysis]
+    E --> F[Step 3:<br/>Report Generation]
+    F --> G[Execute Plan]
+    G --> H[Monitor Progress]
+    H --> I[Final Result]
+    style B fill:#4285f4,color:#fff
+    style C fill:#fbbc04,color:#000
+```
+
+**Pattern**: Planning Pattern
+**Type**: Foundational + Orchestration
+**Framework Support**: Google ADK (Planning), CrewAI (Strategic Planner Agent)
+
+**Key Characteristics**:
+- **Goal Decomposition**: Breaks complex tasks into steps
+- **Dependency Management**: Handles task relationships
+- **Dynamic Planning**: Adjusts based on progress
+- **Parallel Execution**: Identifies independent tasks
+
+**Business Value**:
+- **Complexity Management**: Handles multi-stage workflows
+- **Resource Optimization**: Efficient task allocation
+- **Risk Mitigation**: Identifies critical paths
+- **Flexibility**: Adapts to changes
+
+**Use Cases**:
+- M&A due diligence
+- Product launches
+- Regulatory submissions
+- Multi-department projects
+- Strategic planning
+- Complex process automation
+
+**Real Example**:
+PrivateEquity Partners automated M&A due diligence with planning agents, reducing a 14-day process to 3 days while maintaining quality and compliance.
+
+**When to Use**:
+- Multi-step processes
+- Dependencies matter
+- Coordination across teams
+- Complex project management
+- Strategic initiatives
+- Dynamic environments
+
+**Planning Capabilities**:
+- **Hierarchical**: Nested sub-plans
+- **Parallel**: Concurrent task execution
+- **Sequential**: Dependent task chains
+- **Conditional**: Decision-based branching
+- **Adaptive**: Real-time replanning

@@ -1,0 +1,41 @@
+```mermaid
+graph LR
+    A[User Input] --> B[LlmAgent]
+    B --> C[LLM Model<br/>Gemini 2.0]
+    C --> D[Response]
+    style B fill:#4285f4,color:#fff
+    style C fill:#34a853,color:#fff
+```
+
+**Pattern**: Simple Agent (Single-agent)
+**Type**: Foundational
+**Framework Support**: Google ADK (LlmAgent), CrewAI (Agent)
+
+**Key Characteristics**:
+- **Atomic Unit**: One agent, one task, zero complexity
+- **Deterministic**: Well-defined inputs and outputs
+- **Stateless**: No memory between interactions
+- **Direct**: Straight-line execution path
+
+**Business Value**:
+- **Reliability**: Predictable, consistent outputs
+- **Fast Deployment**: Quick to implement and test
+- **Easy Maintenance**: Simple to debug and update
+- **Cost Effective**: Minimal computational overhead
+
+**Use Cases**:
+- Automated documentation generation
+- Report generation
+- Customer service responses
+- Document processing
+- API documentation sync
+
+**Real Example**:
+TechCorp automated API documentation generation, achieving 92% reduction in documentation lag and $180K annual savings in engineering time.
+
+**When to Use**:
+- Repetitive, well-defined tasks
+- Clear success criteria
+- Reliability over sophistication
+- Quick wins needed
+- No complex state management required

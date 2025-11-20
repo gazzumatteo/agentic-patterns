@@ -1,0 +1,56 @@
+```mermaid
+graph TD
+    A[Task] --> B[LlmAgent]
+    B --> C{Tool Selection}
+    C --> D[MCP Protocol]
+    D --> E[Enterprise API]
+    D --> F[Database]
+    D --> G[External Service]
+    E --> H[Tool Results]
+    F --> H
+    G --> H
+    H --> B
+    B --> I[Final Output]
+    style B fill:#4285f4,color:#fff
+    style D fill:#34a853,color:#fff
+```
+
+**Pattern**: Tool-Using Agent
+**Type**: Foundational + Integration
+**Framework Support**: Google ADK (MCP Tools), CrewAI (Tools)
+
+**Key Characteristics**:
+- **System Integration**: Connects LLMs to real-world systems
+- **Action Capability**: Executes operations beyond text generation
+- **Tool Selection**: Intelligently chooses appropriate tools
+- **Multi-System**: Orchestrates across multiple services
+
+**Business Value**:
+- **Automation**: Transforms insights into actions
+- **Real-time Data**: Accesses live system information
+- **Enterprise Integration**: Connects to existing infrastructure
+- **Compliance**: Built-in audit trails and security
+
+**Use Cases**:
+- Supply chain optimization
+- Financial reconciliation
+- Inventory management
+- CRM automation
+- ERP orchestration
+- API coordination
+
+**Real Example**:
+ManufactureCo deployed tool-using agents for supply chain optimization, achieving 43% reduction in stockouts, 21% decrease in inventory costs, and $2.3M annual savings.
+
+**When to Use**:
+- Multi-system orchestration needed
+- Real-time data access required
+- Actions must be executed
+- Enterprise system integration
+- Compliance and audit trails important
+
+**MCP Protocol Benefits**:
+- **Standardized**: Consistent tool interface
+- **Secure**: Built-in authentication and authorization
+- **Auditable**: Complete action logs
+- **Scalable**: Easy to add new tools

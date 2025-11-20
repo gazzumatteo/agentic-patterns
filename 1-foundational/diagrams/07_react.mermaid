@@ -1,0 +1,63 @@
+```mermaid
+graph TB
+    A[Problem] --> B[Thought]
+    B --> C[Action]
+    C --> D[Tool Execution]
+    D --> E[Observation]
+    E --> F{Goal<br/>Achieved?}
+    F -->|No| B
+    F -->|Yes| G[Solution]
+    style B fill:#4285f4,color:#fff
+    style D fill:#fbbc04,color:#000
+    style G fill:#34a853,color:#fff
+```
+
+**Pattern**: ReAct (Reason and Act)
+**Type**: Foundational + Reasoning
+**Framework Support**: Google ADK (reasoning_mode="react"), CrewAI (verbose=True)
+
+**Key Characteristics**:
+- **Thought-Action Cycle**: Alternates reasoning and execution
+- **Dynamic Planning**: Adjusts based on observations
+- **Tool Integration**: Uses tools to gather information
+- **Feedback Loop**: Observations inform next thoughts
+
+**Business Value**:
+- **Adaptive Problem Solving**: Handles unknown situations
+- **Auditability**: Clear reasoning trail
+- **Flexibility**: Discovers solutions during execution
+- **Intelligence**: Context-aware decision making
+
+**Use Cases**:
+- Medical diagnosis
+- Incident response
+- Investigation workflows
+- Research and analysis
+- Complex troubleshooting
+- Emergency room triage
+- Adaptive systems
+
+**Real Example**:
+Hospital Network deployed ReAct pattern for ER triage optimization, achieving 31% reduction in critical case response time through adaptive reasoning and action.
+
+**When to Use**:
+- Problems can't be solved with predetermined steps
+- Context evolves during execution
+- High-stakes decisions
+- Investigation required
+- Path to solution unknown upfront
+- Regulated industries needing explanation
+- Complex problem-solving
+
+**ReAct Cycle**:
+1. **Thought**: Reason about current state
+2. **Action**: Decide what to do next
+3. **Observation**: Gather results from action
+4. **Evaluation**: Check if goal achieved
+5. **Loop**: Repeat with new information
+
+**Key Benefits**:
+- **Explainability**: Shows reasoning process
+- **Adaptability**: Changes approach based on findings
+- **Tool Use**: Leverages external information
+- **Auditability**: Complete decision trail

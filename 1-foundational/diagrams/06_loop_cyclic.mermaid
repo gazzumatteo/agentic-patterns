@@ -1,0 +1,59 @@
+```mermaid
+graph TD
+    A[Input] --> B[LoopAgent]
+    B --> C[Execute Task]
+    C --> D[Check Result]
+    D --> E{Exit<br/>Condition?}
+    E -->|No| F[Refine Input]
+    F --> C
+    E -->|Yes| G[Output]
+    style B fill:#4285f4,color:#fff
+    style E fill:#fbbc04,color:#000
+```
+
+**Pattern**: Loop/Cyclic Pattern
+**Type**: Foundational + Iteration
+**Framework Support**: Google ADK (LoopAgent - Native), CrewAI (Custom Implementation)
+
+**Key Characteristics**:
+- **Iterative Execution**: Repeated task execution
+- **Progressive Improvement**: Each iteration refines output
+- **Exit Conditions**: Clear success criteria
+- **Retry Logic**: Handles failures gracefully
+
+**Business Value**:
+- **Persistence**: Doesn't give up on first failure
+- **Quality**: Achieves higher accuracy through iteration
+- **Automation**: Handles complex tasks without intervention
+- **Cost Efficiency**: Reduces manual retry efforts
+
+**Use Cases**:
+- Code migration
+- Data transformation
+- Optimization problems
+- Test-driven development
+- Quality improvement
+- Legacy system modernization
+- Complex conversions
+
+**Real Example**:
+FinanceApp automated Python 2 to 3 migration with loop pattern, achieving 89% automatic conversion success, saving 200 developer-hours, and zero production bugs.
+
+**When to Use**:
+- Success requires iteration
+- Testing/validation needed
+- Optimization problems
+- "Try, test, improve, repeat" workflows
+- Complex transformations
+- High accuracy requirements
+
+**Loop Control**:
+- **Max Iterations**: Safety limit
+- **Exit Conditions**: Success criteria
+- **Progress Tracking**: Monitor improvement
+- **Feedback Loop**: Learn from each attempt
+- **Timeout Protection**: Prevent infinite loops
+- **State Management**: Maintain context between iterations
+
+**Google ADK Advantage**:
+Native LoopAgent support makes implementation straightforward compared to custom CrewAI implementations.
