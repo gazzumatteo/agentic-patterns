@@ -1,0 +1,194 @@
+---
+config:
+  theme: base
+  primaryColor: '#4285f4'
+  primaryTextColor: '#fff'
+  primaryBorderColor: '#1c3fa0'
+  lineColor: '#34a853'
+  secondBkgColor: '#fbbc04'
+  tertiaryColor: '#ea4335'
+---
+
+graph TB
+    A["💡 Problem Statement<br/>Project Goal"] --> B["🧠 Manager Agent<br/>Planner & Adaptator"]
+
+    B --> C["📋 Task Ledger<br/>Dynamic Execution Plan"]
+
+    C --> D["▶️ Execute Task 1<br/>Assign & Monitor"]
+    D --> E{{"✅ Success?<br/>Quality Check"}}
+
+    E -->|✓ Yes| F["▶️ Execute Task 2<br/>Next Phase"]
+    E -->|✗ No| G["🔄 Update Ledger<br/>Replan Based on Failure"]
+
+    G --> C
+
+    F --> H{{"✅ Success?<br/>Quality Check"}}
+
+    H -->|✓ Yes| I["▶️ Execute Task 3<br/>Continue Execution"]
+    H -->|✗ No| G
+
+    I --> J{{"✅ Complete?<br/>All Tasks Done"}}
+
+    J -->|✓ Yes| K["🏁 Project Complete<br/>Deliver Solution"]
+    J -->|✗ No| F
+
+    style A fill:#f8f9fa,stroke:#4285f4,stroke-width:2px
+    style B fill:#4285f4,color:#fff,stroke:#1c3fa0,stroke-width:2px
+    style C fill:#fbbc04,color:#000,stroke:#f57f17,stroke-width:3px
+    style D fill:#34a853,color:#fff,stroke:#0d652d,stroke-width:2px
+    style E fill:#fbbc04,color:#000,stroke:#f57f17,stroke-width:2px
+    style F fill:#34a853,color:#fff,stroke:#0d652d,stroke-width:2px
+    style G fill:#ea4335,color:#fff,stroke:#c5221f,stroke-width:2px
+    style H fill:#fbbc04,color:#000,stroke:#f57f17,stroke-width:2px
+    style I fill:#34a853,color:#fff,stroke:#0d652d,stroke-width:2px
+    style J fill:#fbbc04,color:#000,stroke:#f57f17,stroke-width:2px
+    style K fill:#34a853,color:#fff,stroke:#0d652d,stroke-width:2px
+
+
+%% Pattern Documentation
+%% ==================
+%% Pattern Name: Magentic Orchestration (Dynamic Planning & Adaptation)
+%% Article: Article 2 - Multi-Agent Coordination Patterns
+%%
+%% Pattern Description:
+%% Magentic Orchestration combines planning with continuous adaptation. A manager agent
+%% creates an initial task ledger (execution plan), but unlike static plans, this ledger
+%% is continuously updated based on actual execution results. The system replans in
+%% real-time when tasks fail, discovering new approaches, reallocating resources, and
+%% adjusting timelines. Plans become living documents that evolve with reality.
+%%
+%% Business Value:
+%% - Adaptation: Plans evolve as reality changes, not discarded
+%% - Learning: Each failure informs next planning round
+%% - Flexibility: Handles unexpected obstacles and opportunities
+%% - Efficiency: Reallocates resources based on actual progress
+%% - Risk Mitigation: Replanning reduces impact of failures
+%%
+%% Key Characteristics:
+%% 1. Initial Planning: Manager creates execution plan
+%% 2. Live Execution: Tasks execute with monitoring
+%% 3. Failure Detection: Monitor detects task failures
+%% 4. Replanning: Manager updates ledger based on failures
+%% 5. Dependency Management: Account for task dependencies
+%% 6. Resource Reallocation: Redistribute work based on progress
+%% 7. Timeline Adjustment: Adapt schedules dynamically
+%%
+%% Real-World Use Cases:
+%% 1. Dynamic Project Management (Consultancy)
+%%    - Manager creates initial project plan
+%%    - Continuously updates task ledger as work progresses
+%%    - Reallocates resources dynamically when issues discovered
+%%    - Adjusts timeline based on dependencies and actual velocity
+%%    - Result: 62%→94% on-time delivery, 71%→89% resource utilization, 3x faster change handling, +28% profitability
+%%
+%% 2. System Migration Projects
+%%    - Initial migration plan with 100+ tasks
+%%    - As migrations happen, discover compatibility issues
+%%    - Replan remaining tasks based on discovered constraints
+%%    - Adjust timeline, possibly parallelize different components
+%%    - Result: Better estimation, faster migrations, fewer rollbacks
+%%
+%% 3. Product Feature Development
+%%    - Sprint planning creates initial task list
+%%    - As development progresses, discover technical challenges
+%%    - Replan remaining work based on velocity and blockers
+%%    - Adjust feature scope based on time/resource constraints
+%%    - Result: More accurate delivery, better team morale
+%%
+%% 4. Software Testing
+%%    - Initial test plan covers known test cases
+%%    - As tests execute, bugs discovered create new test tasks
+%%    - Replan remaining tests, prioritize critical areas
+%%    - Adjust timeline based on defect discovery rate
+%%    - Result: Better coverage, faster release cycles
+%%
+%% 5. Event Planning
+%%    - Initial event plan with timeline and tasks
+%%    - Vendors fail to deliver, venues change
+%%    - Replan logistics, substitute vendors, adjust schedule
+%%    - Reallocate coordination responsibilities
+%%    - Result: Events happen on time despite obstacles
+%%
+%% 6. Supply Chain Execution
+%%    - Initial shipment plan with routing and timing
+%%    - Shipments delayed, discover shortage
+%%    - Replan to alternative suppliers, adjust routing
+%%    - Reallocate inventory from other locations
+%%    - Result: Maintain on-time delivery despite disruptions
+%%
+%% Implementation Patterns:
+%% - Ledger Structure: Tasks with status, dependencies, estimates, assigned resources
+%% - Failure Analysis: Determine why task failed (resource, complexity, blocker)
+%% - Replanning Strategy: How to generate alternative execution plans
+%% - Priority Adjustment: Focus on critical-path tasks first
+%% - Learning Capture: Remember lessons for future projects
+%%
+%% When To Use:
+%% ✓ Projects in uncertain/dynamic environments
+%% ✓ Complex interdependent tasks
+%% ✓ Need to handle discovered obstacles gracefully
+%% ✓ Resource allocation must be flexible
+%% ✓ Timeline adjustments required mid-project
+%%
+%% When NOT To Use:
+%% ✗ Simple sequential tasks (overhead not justified)
+%% ✗ Require deterministic execution (use strict sequential)
+%% ✗ Cannot afford replanning overhead
+%%
+%% Task Ledger Structure:
+%% - ID: Unique task identifier
+%% - Name: Task description
+%% - Status: Pending, In Progress, Complete, Blocked, Failed
+%% - Dependencies: What tasks must complete before this
+%% - Estimated Effort: Time/resources needed
+%% - Actual Effort: Time/resources used so far
+%% - Assigned Resources: Who/what is doing this task
+%% - Created By: Initial plan or discovered during execution
+%% - Priority: Critical/High/Medium/Low
+%% - Blocker Reasons: Why blocked/failed
+%% - Alternative Approaches: Other ways to accomplish task
+%%
+%% Replanning Triggers:
+%% 1. Task Failure: Complete failure to accomplish task
+%% 2. Time Overrun: Task taking longer than estimated
+%% 3. Resource Unavailable: Assigned resource no longer available
+%% 4. Dependency Blocked: Prerequisite task failed
+%% 5. New Requirements: Unexpected tasks discovered
+%% 6. Changed Environment: External conditions changed
+%% 7. Discovered Obstacles: Issues emerge during execution
+%%
+%% Replanning Strategies:
+%% 1. Substitute: Try different approach for same task
+%% 2. Parallelize: Split task or do in parallel with others
+%% 3. Defer: Move task to later when preconditions met
+%% 4. Eliminate: Remove if no longer necessary
+%% 5. Simplify: Reduce scope to meet deadline
+%% 6. Escalate: Move to more capable resource
+%% 7. Combine: Merge with related tasks for efficiency
+%%
+%% Performance Characteristics:
+%% - Latency: Initial plan + replanning rounds
+%% - Throughput: Adapts to actual execution pace
+%% - Scalability: Scales with project complexity
+%% - Resilience: Excellent (replans around failures)
+%% - Cost: Higher execution due to replanning overhead, but better outcomes
+%%
+%% Learning & Metrics:
+%% - Task Estimation Accuracy: How close are estimates to actuals?
+%% - Replanning Frequency: How often does plan need updating?
+%% - Obstacle Discovery: What types of blockers most common?
+%% - Recovery Speed: How quickly can system adapt to changes?
+%% - Plan Stability: How much does final result differ from initial plan?
+%%
+%% Failure Patterns to Watch:
+%% - Consistently underestimated task types
+%% - Recurring blockers from specific dependencies
+%% - Resources consistently overcommitted
+%% - Discovered tasks not in initial plan
+%% - Tasks that fail after multiple replans
+%%
+%% Related Patterns:
+%% - Sequential Pattern: Fixed plan, strict execution
+%% - Hierarchical Pattern: Multi-level coordination
+%% - Supervisor Pattern: Dynamic routing of work
+%% - Handoff Pattern: Transfer between specialists

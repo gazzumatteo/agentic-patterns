@@ -1,0 +1,194 @@
+---
+config:
+  theme: base
+  primaryColor: '#4285f4'
+  primaryTextColor: '#fff'
+  primaryBorderColor: '#1c3fa0'
+  lineColor: '#34a853'
+  secondBkgColor: '#fbbc04'
+  tertiaryColor: '#ea4335'
+---
+
+graph TB
+    A["📥 Resource Request<br/>Incoming Task/Job"] --> B["🚀 Market Distributor<br/>Auction Manager"]
+
+    B -->|Broadcast Request| C["💰 Solver 1<br/>Available Resources: High<br/>Bid: $100"]
+    B -->|Broadcast Request| D["💰 Solver 2<br/>Available Resources: Very High<br/>Bid: $85"]
+    B -->|Broadcast Request| E["💰 Solver 3<br/>Available Resources: Low<br/>Bid: $120"]
+
+    C --> F["🏆 Auction Manager<br/>Evaluate All Bids"]
+    D --> F
+    E --> F
+
+    F --> G{{"⚖️ Bid Analysis<br/>Price vs Quality<br/>Reputation vs Cost<br/>Capacity vs Risk"}}
+
+    G --> H["🎯 Select Winner<br/>Best Fit for Request"]
+
+    H --> I["📤 Allocate Task<br/>Execute with Winner<br/>Monitor Delivery"]
+
+    style A fill:#f8f9fa,stroke:#4285f4,stroke-width:2px
+    style B fill:#4285f4,color:#fff,stroke:#1c3fa0,stroke-width:2px
+    style C fill:#34a853,color:#fff,stroke:#0d652d,stroke-width:2px
+    style D fill:#34a853,color:#fff,stroke:#0d652d,stroke-width:2px
+    style E fill:#34a853,color:#fff,stroke:#0d652d,stroke-width:2px
+    style F fill:#fbbc04,color:#000,stroke:#f57f17,stroke-width:2px
+    style G fill:#fbbc04,color:#000,stroke:#f57f17,stroke-width:2px
+    style H fill:#ea4335,color:#fff,stroke:#c5221f,stroke-width:2px
+    style I fill:#34a853,color:#fff,stroke:#0d652d,stroke-width:2px
+
+
+%% Pattern Documentation
+%% ==================
+%% Pattern Name: Market-Based Pattern (Economic Coordination)
+%% Article: Article 2 - Multi-Agent Coordination Patterns
+%%
+%% Pattern Description:
+%% The Market-Based Pattern applies economic principles to agent coordination. When
+%% a task needs allocation, agents bid for it based on their current capacity and
+%% capabilities. The system awards the task to the agent offering best value
+%% (auction winner). This creates self-organizing resource allocation without
+%% centralized planning—economic incentives drive optimal distribution.
+%%
+%% Business Value:
+%% - Efficiency: Market forces optimize resource allocation better than rules
+%% - Transparency: Bidding makes resource cost explicit
+%% - Fairness: Objective process removes politics from allocation
+%% - Scalability: Works for 10 or 10,000 agents equally well
+%% - Dynamics: Automatically adapts to changing supply and demand
+%%
+%% Key Characteristics:
+%% 1. Request Broadcast: Task announced to all available agents
+%% 2. Bidding: Agents submit bids based on their state
+%% 3. Bid Evaluation: Objective criteria assess bids
+%% 4. Winner Selection: Best bid wins (could be lowest price, highest quality)
+%% 5. Allocation: Task assigned to winning agent
+%% 6. Economic Feedback: Bids influenced by current load and capability
+%%
+%% Real-World Use Cases:
+%% 1. Cloud Resource Allocation (Infrastructure Cloud Provider)
+%%    - Compute agents bid for incoming jobs
+%%    - Bids based on current load and capabilities
+%%    - Low-load agents bid low to attract work (vs high-load agents bid high)
+%%    - Automatic load balancing through market dynamics
+%%    - Spot pricing for non-critical workloads
+%%    - Result: 68%→91% utilization, -23% customer cost, 99.95%→99.99% SLA, +41% revenue per server
+%%
+%% 2. Data Processing Pipeline
+%%    - Processing jobs bid out to available data center agents
+%%    - Each center bids based on: current load, power cost, network capacity
+%%    - Jobs naturally flow to cheapest provider with capacity
+%%    - Automatic geographic distribution optimization
+%%    - Result: Lower costs, better utilization, load balancing
+%%
+%% 3. Content Delivery Network
+%%    - Edge servers bid for content caching rights
+%%    - Bids based on: distance to users, bandwidth availability, storage
+%%    - Popular content placed closer to users via auction
+%%    - Result: Faster delivery, better user experience
+%%
+%% 4. Task Scheduling in Distributed Systems
+%%    - Worker agents bid for incoming tasks
+%%    - Bid based on: queue length, capability, historical performance
+%%    - Task assigned to best-fit agent
+%%    - Result: Better load balancing, faster completion
+%%
+%% 5. Manufacturing Production Scheduling
+%%    - Production lines bid for incoming orders
+%%    - Bid based on: current load, changeover cost, delivery capability
+%%    - Order assigned to line offering best cost/schedule
+%%    - Result: Better utilization, faster delivery
+%%
+%% 6. Service Team Assignment
+%%    - Service technicians bid for incoming service requests
+%%    - Bid based on: location, expertise, current workload
+%%    - Request assigned to best-qualified agent
+%%    - Result: Better expertise match, faster resolution
+%%
+%% Implementation Patterns:
+%% - First-Price Auction: Winner pays their bid
+%% - Second-Price Auction: Winner pays second-best bid (Vickrey)
+%% - Multi-Attribute Auction: Consider price, quality, reputation
+%% - Dynamic Pricing: Agents adjust bids based on market conditions
+%% - Reservation Price: Minimum acceptable bid threshold
+%%
+%% When To Use:
+%% ✓ Multiple agents with different capacities/capabilities
+%% ✓ Demand exceeds supply, need allocation mechanism
+%% ✓ Want transparent, objective allocation
+%% ✓ Need automatic load balancing
+%% ✓ Market conditions change frequently
+%%
+%% When NOT To Use:
+%% ✗ Simple centralized scheduling sufficient
+%% ✗ Auction overhead exceeds benefits
+%% ✗ Require guaranteed allocations
+%%
+%% Bid Components:
+%% 1. Base Price: Core cost of executing task
+%% 2. Load Adjustment: Premium if agent busy
+%% 3. Specialization Premium: Higher if excellent match
+%% 4. Reputation Multiplier: Better agents bid higher
+%% 5. Competition Factor: Adjusted based on other bids
+%%
+%% Bid Calculation Strategy:
+%% bid = base_price * load_multiplier * expertise_multiplier * competition_factor
+%%
+%% Agent Load Multipliers:
+%% - Idle: 0.5x (very attractive)
+%% - Light: 0.8x (good availability)
+%% - Medium: 1.0x (normal pricing)
+%% - Heavy: 1.5x (limited capacity)
+%% - Full: 2.0x+ (almost rejecting)
+%%
+%% Evaluation Criteria (Multi-attribute):
+%% 1. Price: What is the cost? (weight: 40%)
+%% 2. Quality: What is success probability? (weight: 30%)
+%% 3. Speed: How fast can this be done? (weight: 20%)
+%% 4. Reputation: Historical performance? (weight: 10%)
+%%
+%% Auction Mechanisms:
+%% 1. English Auction: Open bidding, price rises
+%% 2. Dutch Auction: Price falls until someone accepts
+%% 3. Sealed-Bid: Single-submission, best bid wins
+%% 4. Continuous: Always running, first winner gets task
+%% 5. Reverse Auction: Multiple tasks bid for agents
+%%
+%% Market Dynamics:
+%% - Congestion Pricing: High-demand agents charge more
+%% - Competition: More bidders drive prices down
+%% - Quality Signaling: Better agents build reputation
+%% - Specialization: Agents bid high for perfect-fit work
+%% - Learning: Agents adjust bids based on success/failure history
+%%
+%% Performance Characteristics:
+%% - Latency: Auction overhead + execution latency
+%% - Throughput: Auction mechanisms (can be parallel)
+%% - Scalability: Excellent (works for any number of agents)
+%% - Resilience: Excellent (agents can drop out)
+%% - Cost: Optimized by market forces
+%%
+%% Economic Properties:
+%% - Pareto Efficiency: Allocation is locally optimal
+%% - Revenue Equivalence: Different auctions yield similar revenue
+%% - Strategy-Proofness: Truthful bidding is Nash equilibrium
+%% - Budget Balance: Revenue equals total bids paid
+%%
+%% Monitoring Market Health:
+%% - Average Bid: Is it increasing (congestion) or stable?
+%% - Winner Consistency: Do same agents always win?
+%% - Bid Spread: Large spread suggests high specialization
+%% - Task Completion Rate: Are bids accurate predictors?
+%% - Agent Profit Margins: Are they sustainable?
+%%
+%% Failure Scenarios:
+%% - Bid Rigging: Agents collude on high prices
+%% - Winner's Curse: Winner overcommits and fails
+%% - Market Manipulation: Agents time bids to inflate prices
+%% - Specialization Lock: New agents can't compete
+%% - Sybil Attack: Multiple fake agents to control market
+%%
+%% Related Patterns:
+%% - Parallel Pattern: Multiple agents, centrally assigned
+%% - Hierarchical Pattern: Central authority assigns work
+%% - Supervisor Pattern: Router determines allocation
+%% - Swarm Pattern: P2P negotiation vs centralized auction

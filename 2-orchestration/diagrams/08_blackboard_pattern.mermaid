@@ -1,0 +1,181 @@
+---
+config:
+  theme: base
+  primaryColor: '#4285f4'
+  primaryTextColor: '#fff'
+  primaryBorderColor: '#1c3fa0'
+  lineColor: '#34a853'
+  secondBkgColor: '#fbbc04'
+  tertiaryColor: '#ea4335'
+---
+
+graph TB
+    A["🎨 Design Agent"]
+    B["👨‍🔬 Engineer Agent"]
+    C["💰 Cost Analyst Agent"]
+    D["📢 Marketing Agent"]
+    E["📊 Monitor Agent"]
+
+    A -->|Write Contribution| F["🎯 Shared Blackboard<br/>Vector Store/Database"]
+    B -->|Write Contribution| F
+    C -->|Write Contribution| F
+    D -->|Write Contribution| F
+
+    F -->|Read State| A
+    F -->|Read State| B
+    F -->|Read State| C
+    F -->|Read State| D
+
+    E -.->|Watch State<br/>Trigger Next Round| F
+
+    F --> G["✨ Incremental<br/>Solution Emerges<br/>Design Document<br/>+ Constraints<br/>+ Market Analysis"]
+
+    style A fill:#34a853,color:#fff,stroke:#0d652d,stroke-width:2px
+    style B fill:#34a853,color:#fff,stroke:#0d652d,stroke-width:2px
+    style C fill:#34a853,color:#fff,stroke:#0d652d,stroke-width:2px
+    style D fill:#34a853,color:#fff,stroke:#0d652d,stroke-width:2px
+    style E fill:#34a853,color:#fff,stroke:#0d652d,stroke-width:2px
+    style F fill:#4285f4,color:#fff,stroke:#1c3fa0,stroke-width:3px
+    style G fill:#fbbc04,color:#000,stroke:#f57f17,stroke-width:2px
+
+
+%% Pattern Documentation
+%% ==================
+%% Pattern Name: Blackboard Pattern
+%% Article: Article 2 - Multi-Agent Coordination Patterns
+%%
+%% Pattern Description:
+%% The Blackboard Pattern creates a shared workspace where multiple agents asynchronously
+%% contribute to evolving solutions. Agents read the current state, make contributions,
+%% and trigger new rounds of refinement. Inspired by how humans solve complex problems
+%% on a literal blackboard—everyone sees the whole picture, can add ideas, and builds
+%% on others' work without waiting for synchronization.
+%%
+%% Business Value:
+%% - Collaboration: Diverse expertise combined without requiring explicit coordination
+%% - Emergence: Complete solution emerges from specialized contributions
+%% - Efficiency: Asynchronous (agents contribute when ready, not when scheduled)
+%% - Quality: Multiple perspectives refine solution toward optimality
+%% - Flexibility: New agents can be added to improve solutions
+%%
+%% Key Characteristics:
+%% 1. Shared Workspace: Single source of truth for problem state
+%% 2. Asynchronous: Agents don't need to synchronize timing
+%% 3. Incremental: Solutions improve round by round
+%% 4. Expert Contributions: Each agent contributes specialized perspective
+%% 5. Knowledge Accumulation: Each round builds on previous rounds
+%% 6. Multiple Rounds: Iterate until convergence or time limit
+%%
+%% Real-World Use Cases:
+%% 1. Collaborative Product Design
+%%    - Industrial Designer: Aesthetic concepts, form factor
+%%    - Engineer: Technical constraints, manufacturability, feasibility
+%%    - Cost Analyst: Pricing implications, BOM analysis, margins
+%%    - Marketing: Market research, customer preferences, competitive analysis
+%%    - Result: 6 months→6 weeks cycles, 8→3 prototype iterations, 7.2→8.9 market fit, -40% dev cost
+%%
+%% 2. Strategic Planning
+%%    - Finance Agent: Budget constraints, ROI analysis
+%%    - Operations: Feasibility, resource availability
+%%    - Sales: Customer needs, market opportunities
+%%    - Product: Technical capabilities, development timeline
+%%    - Result: Better strategies, faster consensus, aligned execution
+%%
+%% 3. Research Problem-Solving
+%%    - Literature Agent: Existing solutions, research gaps
+%%    - Theory Agent: Theoretical frameworks, mathematical foundations
+%%    - Experimental: Practical constraints, testability
+%%    - Statistical: Data analysis approaches, validation
+%%    - Result: More comprehensive solutions, better research outcomes
+%%
+%% 4. System Architecture Design
+%%    - Front-end Agent: UI/UX requirements, performance needs
+%%    - Back-end Agent: Scalability, reliability, data model
+%%    - Security Agent: Threat analysis, protection mechanisms
+%%    - DevOps: Deployment, monitoring, operations
+%%    - Result: Better architectures, fewer redesigns, better deployment
+%%
+%% 5. Content Creation
+%%    - Writer Agent: Content structure, narrative
+%%    - Designer: Visual concepts, layout, diagrams
+%%    - Technical: Accuracy review, code samples, technical depth
+%%    - Editor: Grammar, clarity, consistency, style
+%%    - Result: Better content, faster turnaround, higher quality
+%%
+%% 6. Business Case Development
+%%    - Finance Agent: Revenue projections, financial models
+%%    - Operations: Cost analysis, resource requirements
+%%    - Risk Agent: Risk identification, mitigation strategies
+%%    - Legal: Regulatory requirements, compliance issues
+%%    - Result: Better business cases, lower approval time
+%%
+%% Implementation Patterns:
+%% - Round-Based: Complete rounds where agents contribute, then sync
+%% - Event-Driven: Agents contribute when triggered by state changes
+%% - Priority-Driven: Higher priority agents execute first
+%% - Convergence: Stop when solution stabilizes or time expires
+%% - Vector Storage: Use embeddings for semantic search on blackboard
+%%
+%% When To Use:
+%% ✓ Complex problems requiring diverse expertise
+%% ✓ Solution emerges from collaborative refinement
+%% ✓ Agents can work asynchronously
+%% ✓ Need multiple rounds of iteration and refinement
+%% ✓ No strict ordering between agent contributions
+%%
+%% When NOT To Use:
+%% ✗ Simple problems resolvable by single agent
+%% ✗ Require real-time synchronous decisions
+%% ✗ Strict ordering critical (use sequential)
+%% ✗ Storage/retrieval of shared state becomes bottleneck
+%%
+%% Contribution Types:
+%% 1. Constraints: Limitations agents must work within
+%% 2. Solutions: Proposed approaches or components
+%% 3. Analysis: Evaluation of current state
+%% 4. Refinements: Improvements to existing proposals
+%% 5. Questions: Requests for additional analysis
+%% 6. Alternatives: Different approaches to consider
+%%
+%% State Evolution:
+%% Round 1: Initial problem statement, high-level constraints
+%% Round 2: Specialized contributions from each domain
+%% Round 3: Refinement addressing conflicts/concerns
+%% Round 4: Convergence toward final solution
+%% Round 5: Final refinement and sign-off
+%%
+%% Knowledge Structure on Blackboard:
+%% - Requirements: What needs to be solved
+%% - Constraints: Boundaries of solution space
+%% - Proposals: Potential solutions or components
+%% - Analysis: Pro/con evaluations
+%% - Conflicts: Unresolved disagreements
+%% - Dependencies: What depends on what
+%% - History: How we got here
+%%
+%% Performance Characteristics:
+%% - Latency: Multiple rounds × longest agent latency
+%% - Throughput: Scales with number of agents
+%% - Scalability: Good (asynchronous avoids coordination bottleneck)
+%% - Resilience: High (missing agent delays but doesn't block)
+%% - Cost: Multiple agent invocations × number of rounds
+%%
+%% Convergence Criteria:
+%% - Solution Stability: State unchanging for N rounds
+%% - Objective Score: Solution meets minimum quality threshold
+%% - Time Limit: Maximum iterations completed
+%% - Consensus: All agents agree solution is ready
+%% - User Satisfaction: User approves current solution
+%%
+%% Monitoring & Debugging:
+%% - Track contribution history of each agent
+%% - Visualize state evolution over rounds
+%% - Identify where conflicts arise
+%% - Detect if agents are converging or oscillating
+%% - Analyze which agents most influence final solution
+%%
+%% Related Patterns:
+%% - Parallel Pattern: Multiple agents, centrally aggregated
+%% - Hierarchical Pattern: Top-down vs collaborative
+%% - Competitive Pattern: Multiple solutions compete vs collaborate
+%% - Network/Swarm: Local P2P vs shared workspace

@@ -1,0 +1,100 @@
+---
+config:
+  theme: base
+  primaryColor: '#4285f4'
+  primaryTextColor: '#fff'
+  primaryBorderColor: '#1c3fa0'
+  lineColor: '#34a853'
+  secondBkgColor: '#fbbc04'
+  tertiaryColor: '#ea4335'
+---
+
+graph LR
+    A[Input] --> B["🔄 Sequential<br/>Orchestrator"]
+    B --> C["🔍 Agent 1:<br/>Extract/Validate"]
+    C -->|State + Data| D["⚙️ Agent 2:<br/>Transform/Enrich"]
+    D -->|State + Data| E["💾 Agent 3:<br/>Load/Store"]
+    E -->|State + Data| F["✅ Output"]
+
+    style A fill:#f8f9fa,stroke:#4285f4,stroke-width:2px
+    style B fill:#4285f4,color:#fff,stroke:#1c3fa0,stroke-width:2px
+    style C fill:#34a853,color:#fff,stroke:#0d652d,stroke-width:2px
+    style D fill:#fbbc04,color:#000,stroke:#f57f17,stroke-width:2px
+    style E fill:#ea4335,color:#fff,stroke:#c5221f,stroke-width:2px
+    style F fill:#34a853,color:#fff,stroke:#0d652d,stroke-width:2px
+
+
+%% Pattern Documentation
+%% ==================
+%% Pattern Name: Sequential Orchestration
+%% Article: Article 2 - Multi-Agent Coordination Patterns
+%%
+%% Pattern Description:
+%% Sequential Orchestration implements strict agent execution order where each agent
+%% builds upon the previous agent's output. State is passed forward through the pipeline,
+%% creating a deterministic workflow ideal for processes requiring compliance and audit trails.
+%%
+%% Business Value:
+%% - Predictable: Every execution follows the same path
+%% - Auditable: Complete state history for compliance
+%% - Reliable: Each step can have error handling and rollback
+%% - Clear: Easy to understand and debug
+%%
+%% Key Characteristics:
+%% 1. Strict Ordering: Tasks execute sequentially, never in parallel
+%% 2. State Passing: Each agent receives full context from predecessors
+%% 3. Error Propagation: Failures stop the pipeline completely
+%% 4. Deterministic: Same input always produces same output
+%% 5. Audit Trail: Every state transition is logged
+%%
+%% Real-World Use Cases:
+%% 1. Insurance Claims Processing
+%%    - OCR extraction → Validation → Fraud detection → Payment processing
+%%    - Result: 5 days → 4 hours, +34% fraud detection, $8.2M annual savings
+%%
+%% 2. Loan Origination
+%%    - Application submission → Credit check → Underwriting → Approval
+%%    - Result: 3 days → 6 hours, 94% → 97% accuracy
+%%
+%% 3. ETL Pipelines
+%%    - Extract raw data → Transform schema → Load into warehouse → Validate integrity
+%%    - Result: Guaranteed data consistency, easy rollback
+%%
+%% 4. Regulatory Submissions
+%%    - Collect data → Format compliance → Generate reports → Submit
+%%    - Result: 100% compliance, complete audit trail
+%%
+%% 5. Content Publishing
+%%    - Write → Review → Edit → Format → Publish → Archive
+%%    - Result: Quality control at each stage
+%%
+%% Implementation Patterns:
+%% - Compensation: Rollback on failure at any stage
+%% - State Management: Explicit state objects passed between agents
+%% - Error Handling: Try-catch at each stage with recovery logic
+%% - Monitoring: Log every state transition for audit
+%%
+%% When To Use:
+%% ✓ Processes requiring strict order (cannot parallelize)
+%% ✓ Regulatory/compliance workflows needing complete audit trails
+%% ✓ Multi-stage processes where earlier stages inform later ones
+%% ✓ Critical systems where reliability > speed
+%% ✓ Workflows requiring easy debugging and rollback
+%%
+%% When NOT To Use:
+%% ✗ Time-sensitive operations (parallel is faster)
+%% ✗ Independent tasks that could run simultaneously
+%% ✗ Systems where latency is the primary metric
+%%
+%% Performance Characteristics:
+%% - Latency: Sum of all agent latencies (additive)
+%% - Throughput: Limited by slowest agent
+%% - Scalability: Horizontal (multiple pipelines in parallel)
+%% - Resilience: Low (single failure stops everything)
+%% - Cost: Predictable and proportional to pipeline complexity
+%%
+%% Related Patterns:
+%% - Parallel Orchestration: For independent concurrent tasks
+%% - Supervisor Pattern: For dynamic routing decisions
+%% - Handoff Pattern: For expertise-based task distribution
+%% - Hierarchical Pattern: For multi-level coordination

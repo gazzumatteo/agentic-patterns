@@ -1,0 +1,189 @@
+---
+config:
+  theme: base
+  primaryColor: '#4285f4'
+  primaryTextColor: '#fff'
+  primaryBorderColor: '#1c3fa0'
+  lineColor: '#34a853'
+  secondBkgColor: '#fbbc04'
+  tertiaryColor: '#ea4335'
+---
+
+sequenceDiagram
+    actor U as User
+    participant S as Supervisor<br/>Orchestrator
+    participant L1 as Level-1 Agent<br/>Generalist
+    participant L2 as Level-2 Agent<br/>Specialist
+    participant L3 as Level-3 Agent<br/>Expert
+
+    U->>S: Complex Request
+    activate S
+    S->>S: Analyze Complexity<br/>& Requirements
+    S->>L1: Initial Assignment<br/>+ Full Context
+    deactivate S
+
+    activate L1
+    L1->>L1: Process Request<br/>Apply Basic Logic
+    alt Request Solvable at L1
+        L1->>S: Complete Solution
+        S->>U: Response
+    else Needs Escalation
+        L1->>S: Escalation Required<br/>+ Context
+        deactivate L1
+
+        activate S
+        S->>L2: Handoff + Context<br/>+ Progress So Far
+        deactivate S
+
+        activate L2
+        L2->>L2: Advanced Processing<br/>Apply Specialized Logic
+        alt Request Solvable at L2
+            L2->>S: Complete Solution
+            S->>U: Response
+        else Requires Expert
+            L2->>S: Expert Escalation<br/>+ Full Context
+            deactivate L2
+
+            activate S
+            S->>L3: Final Handoff<br/>Complete Context<br/>+ All Prior Work
+            deactivate S
+
+            activate L3
+            L3->>L3: Expert Analysis<br/>Apply Master Logic
+            L3->>S: Final Solution
+            deactivate L3
+
+            activate S
+            S->>U: Complete Solution
+            deactivate S
+        end
+    end
+
+    style U fill:#f8f9fa,stroke:#4285f4,stroke-width:2px
+    style S fill:#4285f4,color:#fff,stroke:#1c3fa0,stroke-width:2px
+    style L1 fill:#34a853,color:#fff,stroke:#0d652d,stroke-width:2px
+    style L2 fill:#fbbc04,color:#000,stroke:#f57f17,stroke-width:2px
+    style L3 fill:#ea4335,color:#fff,stroke:#c5221f,stroke-width:2px
+
+
+%% Pattern Documentation
+%% ==================
+%% Pattern Name: Handoff Orchestration (Delegation/Escalation)
+%% Article: Article 2 - Multi-Agent Coordination Patterns
+%%
+%% Pattern Description:
+%% The Handoff Pattern enables dynamic task transfer between agents based on detected
+%% complexity or expertise requirements. A supervisor monitors progress and escalates
+%% to increasingly specialized agents when needed. Critical feature: full context
+%% preservation during handoffs prevents loss of information or required re-work.
+%%
+%% Business Value:
+%% - Cost Efficiency: Expensive experts only handle complex cases
+%% - Quality: Right expertise matches problem complexity
+%% - Speed: Simple cases resolved quickly without unnecessary escalation
+%% - Experience: Complex cases get better handling from specialists
+%% - Learning: System learns optimal routing paths over time
+%%
+%% Key Characteristics:
+%% 1. Dynamic Escalation: Based on complexity assessment, not rules
+%% 2. Context Preservation: Full state transferred to next agent
+%% 3. Multiple Levels: Usually 2-4 levels (generalist → specialist → expert)
+%% 4. Complexity Detection: Determine when escalation needed
+%% 5. Smooth Handoff: No "please repeat your issue" experience
+%%
+%% Real-World Use Cases:
+%% 1. Complex Loan Origination
+%%    - L1: Simple loans (70% of volume, handled in minutes)
+%%    - L2: Complex cases (underwriting needed)
+%%    - L3: Edge cases (senior credit officer)
+%%    - Result: 3 days→6 hours approval, 94%→97% accuracy, -89% violations, +220% productivity
+%%
+%% 2. Technical Support
+%%    - L1: Password reset, restart, standard troubleshooting
+%%    - L2: Application-specific issues, deeper diagnosis
+%%    - L3: System architecture issues, escalation to senior engineers
+%%    - Result: Faster resolution, better CSAT, optimized resource use
+%%
+%% 3. Customer Service
+%%    - L1: Account lookup, simple questions, standard issues
+%%    - L2: Refund processing, complaint handling
+%%    - L3: VIP issues, legal disputes, executive escalations
+%%    - Result: Better customer experience, faster resolution
+%%
+%% 4. Insurance Claims
+%%    - L1: Simple claims (minor damage, fast processing)
+%%    - L2: Standard claims (investigation, adjustment needed)
+%%    - L3: Complex/disputed claims (legal review, senior adjuster)
+%%    - Result: Faster processing, better handling of complex cases
+%%
+%% 5. Medical Diagnosis
+%%    - L1: Symptom screening, basic diagnosis
+%%    - L2: Specialist consultation (cardiologist, oncologist, etc.)
+%%    - L3: Multidisciplinary team (complex cases, multiple specialties)
+%%    - Result: Better diagnostics, optimized specialist time
+%%
+%% 6. Legal Document Review
+%%    - L1: Standard contracts, routine reviews
+%%    - L2: Complex agreements, negotiation points
+%%    - L3: Litigation matters, precedent research
+%%    - Result: Faster reviews, better expertise match, cost control
+%%
+%% Implementation Patterns:
+%% - Complexity Scoring: Numerical score triggers escalation thresholds
+%% - Confidence Thresholds: Escalate if confidence below threshold
+%% - Exception Detection: Escalate on unusual patterns
+%% - Time-Based: Escalate if not resolved within time window
+%% - Cost-Based: Escalate if cost/complexity ratio suggests need
+%%
+%% When To Use:
+%% ✓ Complexity varies significantly between cases
+%% ✓ Have multiple agent levels with different expertise
+%% ✓ Some agents more expensive than others
+%% ✓ Simple cases shouldn't consume expert resources
+%% ✓ Complex cases benefit from specialization
+%%
+%% When NOT To Use:
+%% ✗ All cases require all agents anyway
+%% ✗ Cannot afford multiple agent levels
+%% ✗ Handoff overhead exceeds benefits
+%%
+%% Escalation Triggers:
+%% 1. Complexity: Request exceeds agent's capability
+%% 2. Confidence: Agent not confident in solution
+%% 3. Time: Request taking longer than threshold
+%% 4. Specialization: Request needs expert knowledge
+%% 5. Authority: Request exceeds agent's permission level
+%% 6. Cost: Cost-benefit favors specialist handling
+%%
+%% Context Transfer Elements:
+%% - Original Request: Complete user request
+%% - Processing History: All work done so far
+%% - Partial Results: What's been discovered
+%% - Failure Reasons: Why previous agent escalated
+%% - Constraints: Any restrictions on solution
+%% - Deadline: Any time pressure
+%%
+%% Agent Level Characteristics:
+%% - L1 (Generalist): Fast, broad knowledge, limited depth
+%% - L2 (Specialist): Deeper knowledge in specific domain
+%% - L3 (Expert): Deepest knowledge, handles exceptions
+%%
+%% Performance Characteristics:
+%% - Latency: Varies (may increase with escalations)
+%% - Throughput: Better utilization of expensive agents
+%% - Scalability: Scales with number of levels
+%% - Resilience: High (escalation prevents failure)
+%% - Cost: Optimized (expensive agents not wasted)
+%%
+%% Learning Opportunities:
+%% - Track which complexity levels route to which agents
+%% - Improve escalation thresholds over time
+%% - Identify cases where agents are overqualified
+%% - Detect patterns in complex cases
+%% - Optimize L1 agent capabilities
+%%
+%% Related Patterns:
+%% - Supervisor Pattern: Single-level dynamic routing
+%% - Hierarchical Pattern: Multi-level management structure
+%% - Parallel Pattern: Multiple specialists work together
+%% - Sequential Pattern: Fixed ordering, no escalation

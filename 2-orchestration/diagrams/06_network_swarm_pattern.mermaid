@@ -1,0 +1,174 @@
+---
+config:
+  theme: base
+  primaryColor: '#4285f4'
+  primaryTextColor: '#fff'
+  primaryBorderColor: '#1c3fa0'
+  lineColor: '#34a853'
+  secondBkgColor: '#fbbc04'
+  tertiaryColor: '#ea4335'
+---
+
+graph TB
+    subgraph Swarm["🌐 Peer-to-Peer Swarm Network"]
+        A["🤖 Agent 1"]
+        B["🤖 Agent 2"]
+        C["🤖 Agent 3"]
+        D["🤖 Agent 4"]
+        E["🤖 Agent 5"]
+        F["🤖 Agent 6"]
+
+        A <-->|P2P| B
+        B <-->|P2P| C
+        C <-->|P2P| D
+        D <-->|P2P| E
+        E <-->|P2P| F
+        F <-->|P2P| A
+        A <-->|P2P| C
+        B <-->|P2P| D
+        C <-->|P2P| E
+        D <-->|P2P| F
+        E <-->|P2P| A
+        F <-->|P2P| B
+        A <-->|P2P| D
+        B <-->|P2P| E
+    end
+
+    G["✨ Emergent<br/>Behavior & Solutions"]
+    G -.->|Arises from| Swarm
+
+    H["📊 Collective<br/>Intelligence"]
+    Swarm -.->|Produces| H
+
+    style A fill:#34a853,color:#fff,stroke:#0d652d,stroke-width:2px
+    style B fill:#34a853,color:#fff,stroke:#0d652d,stroke-width:2px
+    style C fill:#34a853,color:#fff,stroke:#0d652d,stroke-width:2px
+    style D fill:#34a853,color:#fff,stroke:#0d652d,stroke-width:2px
+    style E fill:#34a853,color:#fff,stroke:#0d652d,stroke-width:2px
+    style F fill:#34a853,color:#fff,stroke:#0d652d,stroke-width:2px
+    style Swarm fill:transparent,stroke:#4285f4,stroke-width:3px,stroke-dasharray: 5 5
+    style G fill:#fbbc04,color:#000,stroke:#f57f17,stroke-width:2px
+    style H fill:#34a853,color:#fff,stroke:#0d652d,stroke-width:2px
+
+
+%% Pattern Documentation
+%% ==================
+%% Pattern Name: Network/Swarm Pattern
+%% Article: Article 2 - Multi-Agent Coordination Patterns
+%%
+%% Pattern Description:
+%% The Network/Swarm Pattern implements decentralized, peer-to-peer agent communication
+%% with no central authority. Agents communicate directly with local neighbors, and
+%% emergent collective intelligence arises from thousands of simple local interactions.
+%% Often called "agent swarm" inspired by biological swarms (ants, birds, fish).
+%%
+%% Business Value:
+%% - Resilience: No single point of failure, system continues if individual agents fail
+%% - Scalability: Adds agents without reconfiguring central control
+%% - Adaptability: System self-organizes to changing conditions
+%% - Efficiency: Local optimization often achieves global optimization
+%% - Robustness: Survives failures, corruption, malicious actors
+%%
+%% Key Characteristics:
+%% 1. Decentralized: No central coordinator or controller
+%% 2. Peer-to-Peer: Direct agent-to-agent communication
+%% 3. Local Rules: Each agent follows simple local rules
+%% 4. Emergent Behavior: Complex system behaviors arise from simple rules
+%% 5. Self-Organization: System organizes itself without explicit direction
+%% 6. Adaptive: Responds to environmental changes dynamically
+%%
+%% Real-World Use Cases:
+%% 1. Warehouse Robot Coordination
+%%    - 200 autonomous robots coordinate peer-to-peer
+%%    - No central traffic controller
+%%    - Self-organizing path optimization, collision avoidance
+%%    - Result: 180→340 items/hour, 0 collisions in 6 months, 30% failure tolerance, +26% efficiency
+%%
+%% 2. Autonomous Vehicle Fleets
+%%    - Vehicles communicate with nearby vehicles
+%%    - Collective route optimization
+%%    - Accident prevention through information sharing
+%%    - Result: Safer roads, less congestion, faster delivery
+%%
+%% 3. IoT Sensor Networks
+%%    - Sensors report to nearby neighbors
+%%    - Distributed data aggregation
+%%    - Network self-heals when sensors fail
+%%    - Result: Robust monitoring, lower latency, scalable
+%%
+%% 4. Distributed Computing
+%%    - Nodes coordinate work without central scheduler
+%%    - Dynamic load balancing
+%%    - Resilient to node failures
+%%    - Result: Better resource utilization, fault tolerance
+%%
+%% 5. Supply Chain Optimization
+%%    - Warehouses coordinate shipping with neighbors
+%%    - Dynamic inventory rebalancing
+%%    - Faster response to demand changes
+%%    - Result: Lower stockouts, faster fulfillment
+%%
+%% 6. Disaster Response
+%%    - Emergency response teams coordinate peer-to-peer
+%%    - No central command requirement
+%%    - Self-organizing task allocation
+%%    - Result: Faster response, works despite infrastructure failures
+%%
+%% Implementation Patterns:
+%% - Mesh Network: Each agent connects to multiple neighbors
+%% - Gossip Protocol: Information spreads through local sharing
+%% - Voting/Consensus: Local decisions aggregate to collective decisions
+%% - Pheromone Trails: Agents leave digital "pheromones" for others
+%% - Ant Colony Optimization: Inspired by biological swarm behavior
+%%
+%% When To Use:
+%% ✓ Resilience critical, cannot afford single point of failure
+%% ✓ Large-scale distributed systems
+%% ✓ Operating in unreliable/unpredictable environments
+%% ✓ Rapid adaptation to changing conditions needed
+%% ✓ Individual agent failures acceptable
+%%
+%% When NOT To Use:
+%% ✗ Centralized control required for compliance
+%% ✗ Need deterministic ordering/sequencing
+%% ✗ Real-time latency-critical decisions
+%% ✗ Require global consistency at all times
+%%
+%% Communication Patterns:
+%% 1. Broadcast: Agent sends to all neighbors
+%% 2. Multicast: Agent sends to subset of neighbors
+%% 3. Gossip: Information spreads probabilistically
+%% 4. Epidemic: Information spreads like biological disease
+%% 5. Directed: Specific neighbors based on state
+%%
+%% Local Rules Examples:
+%% 1. Separation: Don't collide with neighbors
+%% 2. Alignment: Move in similar direction as neighbors
+%% 3. Cohesion: Stay close to neighbors
+%% 4. Attraction: Move toward goals
+%% 5. Repulsion: Avoid obstacles and threats
+%%
+%% Emergence Mechanisms:
+%% - No explicit system goal, emerges from agent goals
+%% - No central planning, emerges from local decisions
+%% - No single decision-maker, emerges from voting/consensus
+%% - No explicit load balancing, emerges from bidding/negotiation
+%%
+%% Performance Characteristics:
+%% - Latency: Variable (depends on network hops)
+%% - Throughput: Scales with number of agents
+%% - Scalability: Excellent (designed for 1000s of agents)
+%% - Resilience: Excellent (survives massive failures)
+%% - Cost: High initial complexity, but scales linearly
+%%
+%% Monitoring Emergent Behavior:
+%% - Particle Swarm Fitness: How well is goal being achieved?
+%% - Diversity Metrics: Is swarm exploring or exploiting?
+%% - Stability Metrics: Is behavior converging or oscillating?
+%% - Fairness: Are all agents contributing equally?
+%%
+%% Related Patterns:
+%% - Hierarchical Pattern: Centralized vs decentralized
+%% - Parallel Pattern: Multiple agents, centrally coordinated
+%% - Supervisor Pattern: Single router vs many peers
+%% - Market-Based Pattern: Economic coordination vs P2P

@@ -1,0 +1,18 @@
+"""Test data for orchestration pattern examples."""
+
+from .customer_orders import SAMPLE_ORDER_SIMPLE, SAMPLE_ORDER_LARGE, SAMPLE_ORDER_VIP
+from .risk_profiles import LOW_RISK_PROFILE, MEDIUM_RISK_PROFILE, HIGH_RISK_PROFILE
+from .support_tickets import FINANCIAL_TICKET, LEGAL_TICKET, TECHNICAL_TICKET, VIP_TICKET
+
+__all__ = [
+    "SAMPLE_ORDER_SIMPLE",
+    "SAMPLE_ORDER_LARGE",
+    "SAMPLE_ORDER_VIP",
+    "LOW_RISK_PROFILE",
+    "MEDIUM_RISK_PROFILE",
+    "HIGH_RISK_PROFILE",
+    "FINANCIAL_TICKET",
+    "LEGAL_TICKET",
+    "TECHNICAL_TICKET",
+    "VIP_TICKET",
+]

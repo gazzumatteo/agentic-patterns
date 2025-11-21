@@ -1,0 +1,122 @@
+---
+config:
+  theme: base
+  primaryColor: '#4285f4'
+  primaryTextColor: '#fff'
+  primaryBorderColor: '#1c3fa0'
+  lineColor: '#34a853'
+  secondBkgColor: '#fbbc04'
+  tertiaryColor: '#ea4335'
+---
+
+graph TB
+    A["📥 Request<br/>Input"] --> B["🚀 Parallel<br/>Distributor"]
+
+    B -->|Fan-out Task 1| C["⚡ Worker 1:<br/>News Analysis"]
+    B -->|Fan-out Task 2| D["⚡ Worker 2:<br/>Social Sentiment"]
+    B -->|Fan-out Task 3| E["⚡ Worker 3:<br/>Technical Analysis"]
+    B -->|Fan-out Task 4| F["⚡ Worker 4:<br/>Fundamental Data"]
+
+    C -->|Results| G["🔗 Aggregator<br/>Fan-in & Synthesize"]
+    D -->|Results| G
+    E -->|Results| G
+    F -->|Results| G
+
+    G --> H["📊 Combined<br/>Output"]
+
+    style A fill:#f8f9fa,stroke:#4285f4,stroke-width:2px
+    style B fill:#4285f4,color:#fff,stroke:#1c3fa0,stroke-width:2px
+    style C fill:#34a853,color:#fff,stroke:#0d652d,stroke-width:2px
+    style D fill:#34a853,color:#fff,stroke:#0d652d,stroke-width:2px
+    style E fill:#34a853,color:#fff,stroke:#0d652d,stroke-width:2px
+    style F fill:#34a853,color:#fff,stroke:#0d652d,stroke-width:2px
+    style G fill:#34a853,color:#fff,stroke:#0d652d,stroke-width:2px
+    style H fill:#fbbc04,color:#000,stroke:#f57f17,stroke-width:2px
+
+
+%% Pattern Documentation
+%% ==================
+%% Pattern Name: Parallel Orchestration
+%% Article: Article 2 - Multi-Agent Coordination Patterns
+%%
+%% Pattern Description:
+%% Parallel Orchestration distributes independent tasks across multiple agents that work
+%% simultaneously. A distributor fan-out sends work to workers, and an aggregator fan-in
+%% collects and synthesizes results. Speed through massive parallelization.
+%%
+%% Business Value:
+%% - Speed: 10-100x faster than sequential for independent tasks
+%% - Cost: Better resource utilization (parallelism reduces idle time)
+%% - Scalability: Add workers without changing architecture
+%% - Comprehensive: Analyze from multiple angles simultaneously
+%%
+%% Key Characteristics:
+%% 1. Independent Execution: Tasks don't depend on each other
+%% 2. Concurrent Workers: Multiple agents process simultaneously
+%% 3. Result Aggregation: Combine results from all workers
+%% 4. Fan-Out/Fan-In: Distribute work, collect results
+%% 5. Timeout Handling: Proceed with partial results if needed
+%%
+%% Real-World Use Cases:
+%% 1. Real-Time Market Analysis
+%%    - 15 agents analyzing different indicators in parallel
+%%    - Result: 45 seconds → 3 seconds, +180bp alpha, -60% cost
+%%
+%% 2. Quality Assurance Testing
+%%    - Test UI, API, database, performance in parallel
+%%    - Result: 8 hours → 1 hour test suite execution
+%%
+%% 3. Data Pipeline Processing
+%%    - Transform multiple data sources simultaneously
+%%    - Result: Process 1M records in minutes, not hours
+%%
+%% 4. Multi-Modal Content Analysis
+%%    - Analyze image, text, audio, video in parallel
+%%    - Result: Complete analysis in seconds
+%%
+%% 5. Customer Service Triage
+%%    - Check inventory, pricing, warranty, status in parallel
+%%    - Result: 60 second response time to complex queries
+%%
+%% 6. Risk Assessment
+%%    - Evaluate credit, fraud, compliance, operational risk in parallel
+%%    - Result: Holistic risk profile in seconds
+%%
+%% Implementation Patterns:
+%% - Dynamic Worker Pooling: Scale workers based on load
+%% - Partial Result Handling: Proceed with minimum required responses
+%% - Result Merging: Combine partial results intelligently
+%% - Timeout Strategy: Hard timeout or grace period
+%% - Error Isolation: One worker failure doesn't stop others
+%%
+%% When To Use:
+%% ✓ Tasks that are independent and parallelizable
+%% ✓ Need comprehensive multi-perspective analysis
+%% ✓ Speed is critical competitive advantage
+%% ✓ Have sufficient computational resources
+%% ✓ Can tolerate partial failures with graceful degradation
+%%
+%% When NOT To Use:
+%% ✗ Tasks with strong dependencies (use sequential)
+%% ✗ Resource-constrained environments
+%% ✗ Where consistency across all results is mandatory
+%%
+%% Performance Characteristics:
+%% - Latency: Maximum of all worker latencies (not additive)
+%% - Throughput: Scales with number of workers
+%% - Scalability: Horizontal (add more workers)
+%% - Resilience: Medium (partial failures manageable)
+%% - Cost: Lower per-task when parallelizable
+%%
+%% Aggregation Strategies:
+%% 1. Voting: Majority rule for decisions
+%% 2. Consensus: Agreement-based synthesis
+%% 3. Ranking: Select top N results
+%% 4. Merging: Combine all results into single output
+%% 5. Learning: LLM synthesizes diverse inputs
+%%
+%% Related Patterns:
+%% - Sequential Orchestration: For dependent tasks
+%% - Supervisor Pattern: For dynamic task distribution
+%% - Competitive Pattern: Multiple approaches to same problem
+%% - Network/Swarm: Decentralized parallel execution

@@ -1,0 +1,128 @@
+---
+config:
+  theme: base
+  primaryColor: '#4285f4'
+  primaryTextColor: '#fff'
+  primaryBorderColor: '#1c3fa0'
+  lineColor: '#34a853'
+  secondBkgColor: '#fbbc04'
+  tertiaryColor: '#ea4335'
+---
+
+graph TB
+    A["📥 Request<br/>User Input"] --> B["🧠 Supervisor<br/>Router Agent"]
+
+    B --> C{{"📊 Task<br/>Classification<br/>& Analysis"}}
+
+    C -->|Financial<br/>Query| D["💰 Specialist:<br/>Financial Agent"]
+    C -->|Legal<br/>Query| E["⚖️ Specialist:<br/>Legal Agent"]
+    C -->|Technical<br/>Query| F["🔧 Specialist:<br/>Technical Agent"]
+    C -->|General<br/>Query| G["📝 Specialist:<br/>General Agent"]
+
+    D --> H["📋 Results<br/>Aggregation"]
+    E --> H
+    F --> H
+    G --> H
+
+    H --> B
+    B --> I["✅ Final<br/>Response"]
+
+    style A fill:#f8f9fa,stroke:#4285f4,stroke-width:2px
+    style B fill:#4285f4,color:#fff,stroke:#1c3fa0,stroke-width:2px
+    style C fill:#fbbc04,color:#000,stroke:#f57f17,stroke-width:2px
+    style D fill:#34a853,color:#fff,stroke:#0d652d,stroke-width:2px
+    style E fill:#34a853,color:#fff,stroke:#0d652d,stroke-width:2px
+    style F fill:#34a853,color:#fff,stroke:#0d652d,stroke-width:2px
+    style G fill:#34a853,color:#fff,stroke:#0d652d,stroke-width:2px
+    style H fill:#34a853,color:#fff,stroke:#0d652d,stroke-width:2px
+    style I fill:#ea4335,color:#fff,stroke:#c5221f,stroke-width:2px
+
+
+%% Pattern Documentation
+%% ==================
+%% Pattern Name: Supervisor Pattern (Router)
+%% Article: Article 2 - Multi-Agent Coordination Patterns
+%%
+%% Pattern Description:
+%% The Supervisor Pattern employs an intelligent coordinator agent that analyzes
+%% incoming requests and dynamically routes them to the most appropriate specialist worker.
+%% Unlike static routing based on rules, the supervisor uses AI to understand context
+%% and make intelligent delegation decisions.
+%%
+%% Business Value:
+%% - Intelligence: Content-based routing, not rule-based
+%% - Efficiency: Complex queries reach experts, simple ones handled quickly
+%% - Flexibility: New specialists can be added without code changes
+%% - Quality: Right expertise applied to each problem
+%% - Cost: Expensive experts not wasted on routine work
+%%
+%% Key Characteristics:
+%% 1. Intelligent Routing: LLM analyzes request and makes delegation decision
+%% 2. Specialist Workers: Each focused on specific domain expertise
+%% 3. Context Preservation: Full request context maintained across handoff
+%% 4. Dynamic Delegation: Routing based on content, not predetermined paths
+%% 5. Aggregation Loop: Supervisor may synthesize results from multiple specialists
+%%
+%% Real-World Use Cases:
+%% 1. Intelligent IT Helpdesk
+%%    - Classify tickets: Password Reset, Software Install, Hardware, etc.
+%%    - Result: 31% → 67% first-contact resolution, -73% human tickets, $4.1M savings
+%%
+%% 2. Customer Support Triage
+%%    - Route to billing, technical, shipping, or escalation queue
+%%    - Result: Faster resolution, higher CSAT, better resource utilization
+%%
+%% 3. Legal Document Review
+%%    - Route to contract specialist, compliance expert, or litigation team
+%%    - Result: Faster reviews, better accuracy, cost optimization
+%%
+%% 4. Healthcare Intake
+%%    - Route to cardiology, orthopedics, psychiatry, or emergency
+%%    - Result: Faster diagnosis, specialized treatment, better outcomes
+%%
+%% 5. E-commerce Order Issues
+%%    - Route to inventory, shipping, returns, or quality issues
+%%    - Result: Faster issue resolution, customer satisfaction
+%%
+%% 6. API Gateway Routing
+%%    - Route requests to appropriate microservice based on intent
+%%    - Result: Intelligent load balancing, feature detection
+%%
+%% Implementation Patterns:
+%% - One-Level Supervision: Supervisor → Specialists (simple)
+%% - Multi-Level Supervision: Supervisor → Managers → Specialists
+%% - Capability Detection: Supervisor discovers specialist capabilities
+%% - Load Balancing: Supervisor routes to least-busy specialist
+%% - Learning Router: Supervisor improves routing over time
+%%
+%% When To Use:
+%% ✓ Diverse workloads with varied complexity levels
+%% ✓ Multiple specialists available for different problems
+%% ✓ Need intelligent content-based routing
+%% ✓ Simple queries shouldn't consume expert time
+%% ✓ New specialists being added frequently
+%%
+%% When NOT To Use:
+%% ✗ Simple one-path workflows (use sequential)
+%% ✗ All requests need all specialists
+%% ✗ Cannot afford routing latency
+%%
+%% Routing Decision Factors:
+%% 1. Request Type: What kind of problem is this?
+%% 2. Complexity Level: How hard is this to solve?
+%% 3. Specialist Load: Who has bandwidth?
+%% 4. Specialist Expertise: Who can solve this best?
+%% 5. Urgency: How quickly does this need resolution?
+%%
+%% Performance Characteristics:
+%% - Latency: Routing overhead + specialist latency
+%% - Throughput: Sum of all specialist throughputs
+%% - Scalability: Horizontal (add more specialists)
+%% - Resilience: High (specialist failure doesn't stop routing)
+%% - Cost: Optimized (no expensive resources wasted)
+%%
+%% Related Patterns:
+%% - Hierarchical Pattern: Multi-level routing structure
+%% - Handoff Pattern: Transfer between specialists
+%% - Parallel Pattern: Multiple specialists work together
+%% - Competitive Pattern: Multiple specialists approach same problem

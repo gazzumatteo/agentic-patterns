@@ -1,0 +1,150 @@
+---
+config:
+  theme: base
+  primaryColor: '#4285f4'
+  primaryTextColor: '#fff'
+  primaryBorderColor: '#1c3fa0'
+  lineColor: '#34a853'
+  secondBkgColor: '#fbbc04'
+  tertiaryColor: '#ea4335'
+---
+
+graph TB
+    A["📝 Creative Brief<br/>Problem Statement"] --> B["🏃 Parallel<br/>Distribution"]
+
+    B -->|Challenge| C["✍️ Copywriter Agent 1<br/>Approach A"]
+    B -->|Challenge| D["✍️ Copywriter Agent 2<br/>Approach B"]
+    B -->|Challenge| E["✍️ Copywriter Agent 3<br/>Approach C"]
+
+    C --> F["📄 Campaign Option A<br/>Creative Concept"]
+    D --> G["📄 Campaign Option B<br/>Creative Concept"]
+    E --> H["📄 Campaign Option C<br/>Creative Concept"]
+
+    F --> I["🏆 Evaluator Agent<br/>Critic & Judge"]
+    G --> I
+    H --> I
+
+    I --> J{{"⭐ Scoring<br/>Brand Fit<br/>Creativity<br/>Conversion"}}
+
+    J --> K["🥇 Best Option<br/>Selection"]
+
+    style A fill:#f8f9fa,stroke:#4285f4,stroke-width:2px
+    style B fill:#4285f4,color:#fff,stroke:#1c3fa0,stroke-width:2px
+    style C fill:#34a853,color:#fff,stroke:#0d652d,stroke-width:2px
+    style D fill:#34a853,color:#fff,stroke:#0d652d,stroke-width:2px
+    style E fill:#34a853,color:#fff,stroke:#0d652d,stroke-width:2px
+    style F fill:#fbbc04,color:#000,stroke:#f57f17,stroke-width:2px
+    style G fill:#fbbc04,color:#000,stroke:#f57f17,stroke-width:2px
+    style H fill:#fbbc04,color:#000,stroke:#f57f17,stroke-width:2px
+    style I fill:#ea4335,color:#fff,stroke:#c5221f,stroke-width:2px
+    style J fill:#fbbc04,color:#000,stroke:#f57f17,stroke-width:2px
+    style K fill:#34a853,color:#fff,stroke:#0d652d,stroke-width:2px
+
+
+%% Pattern Documentation
+%% ==================
+%% Pattern Name: Competitive Pattern
+%% Article: Article 2 - Multi-Agent Coordination Patterns
+%%
+%% Pattern Description:
+%% The Competitive Pattern distributes the same problem to multiple agents working
+%% in parallel, each approaching it differently. Their solutions compete for selection,
+%% with an evaluator agent determining the winner(s) based on predefined criteria.
+%% Competition drives quality and innovation through diverse approaches.
+%%
+%% Business Value:
+%% - Innovation: Multiple approaches often reveal breakthrough solutions
+%% - Quality: Competition raises the bar for all participants
+%% - Objectivity: Evaluator removes politics from selection
+%% - Exploration: Discover solutions that single agents might miss
+%% - Risk Reduction: If one approach fails, others provide alternatives
+%%
+%% Key Characteristics:
+%% 1. Parallel Generation: Same problem, multiple agents, different approaches
+%% 2. Independent Solutions: Agents work without seeing competitors' work
+%% 3. Objective Evaluation: Clear criteria for judging solutions
+%% 4. Diverse Approaches: Agents use different models or prompting strategies
+%% 5. Winner Selection: Top N solutions chosen, not necessarily just one
+%%
+%% Real-World Use Cases:
+%% 1. Creative Campaign Generation
+%%    - 5 copywriters generate different campaign concepts
+%%    - Evaluator scores on brand alignment, creativity, conversion potential
+%%    - Top 3 presented to client, client approval: 68%→91%
+%%    - Result: +43% CTR, 2 weeks→2 days, -55% cost per campaign
+%%
+%% 2. Algorithm Optimization
+%%    - Multiple agents propose different optimization approaches
+%%    - Evaluate on performance, efficiency, maintainability
+%%    - Select best algorithm for production
+%%    - Result: Faster algorithms, lower computational cost
+%%
+%% 3. Strategic Planning
+%%    - Different agents propose different business strategies
+%%    - Evaluate on revenue potential, risk, feasibility
+%%    - Select best strategy for execution
+%%    - Result: Better strategic alignment, lower execution risk
+%%
+%% 4. Product Design Options
+%%    - Multiple design agents create different product concepts
+%%    - Evaluate on manufacturability, cost, user appeal
+%%    - Select design to proceed with
+%%    - Result: Better products faster, lower rework
+%%
+%% 5. Code Solution Generation
+%%    - Multiple agents write different code implementations
+%%    - Evaluate on performance, readability, maintainability
+%%    - Select best implementation
+%%    - Result: Better code, faster development
+%%
+%% 6. Marketing Copy Testing
+%%    - Multiple agents write different ad copy variations
+%%    - Evaluate on predicted CTR, conversion, relevance
+%%    - Select top performers for A/B testing
+%%    - Result: Higher conversion rates, better ROI
+%%
+%% Implementation Patterns:
+%% - Diversity Inducement: Use different models, prompts, or parameters
+%% - Blind Competition: Agents don't see competitors' work
+%% - Scoring Rubric: Clear evaluation criteria
+%% - Top-K Selection: Choose top K rather than just winner
+%% - Iterative Refinement: Winner can be refined further
+%%
+%% When To Use:
+%% ✓ High-stakes decisions where optimal solution matters
+%% ✓ Creative problems without single correct answer
+%% ✓ Want to explore solution space broadly
+%% ✓ Can afford cost of multiple solution attempts
+%% ✓ Quality more important than speed
+%%
+%% When NOT To Use:
+%% ✗ Time-critical, real-time decisions
+%% ✗ Cost-sensitive operations with tight budgets
+%% ✗ Well-defined problems with known solutions
+%% ✗ Simple problems not worth exploring
+%%
+%% Competition Parameters:
+%% 1. Number of Competitors: 2-10 typically optimal
+%% 2. Diversity: Different models, prompts, temperatures
+%% 3. Scoring Criteria: 3-7 weighted dimensions
+%% 4. Selection: Top 1 (single) or Top K (multiple)
+%% 5. Refinement: Winner can be further optimized
+%%
+%% Evaluation Criteria Examples:
+%% - Creative: Brand alignment, originality, memorability
+%% - Technical: Performance, efficiency, maintainability
+%% - Business: Revenue potential, risk, feasibility
+%% - User: Appeal, usability, accessibility
+%%
+%% Performance Characteristics:
+%% - Latency: Parallel execution (one winner's latency)
+%% - Throughput: Limited by evaluator
+%% - Scalability: Linear with number of competitors
+%% - Resilience: Excellent (multiple solutions reduce risk)
+%% - Cost: Higher (multiple agents for same problem)
+%%
+%% Related Patterns:
+%% - Parallel Pattern: Multiple agents, same goal, aggregated results
+%% - Supervisor Pattern: Routing between different specialists
+%% - Reflection Pattern: Single agent iterates and improves
+%% - Hierarchical Pattern: Multi-level competition

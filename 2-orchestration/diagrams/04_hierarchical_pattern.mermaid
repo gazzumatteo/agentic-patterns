@@ -1,0 +1,161 @@
+---
+config:
+  theme: base
+  primaryColor: '#4285f4'
+  primaryTextColor: '#fff'
+  primaryBorderColor: '#1c3fa0'
+  lineColor: '#34a853'
+  secondBkgColor: '#fbbc04'
+  tertiaryColor: '#ea4335'
+---
+
+graph TB
+    A["👔 CEO Agent<br/>Strategic Planning"] --> B["📊 VP Sales"]
+    A --> C["🏗️ VP Engineering"]
+    A --> D["🚚 VP Operations"]
+
+    B --> E["🌍 Regional Manager 1"]
+    B --> F["🌎 Regional Manager 2"]
+
+    C --> G["👨‍💻 Dev Lead<br/>Backend"]
+    C --> H["🧪 QA Lead"]
+
+    D --> I["📦 Supply Chain<br/>Manager"]
+    D --> J["🚛 Logistics<br/>Manager"]
+
+    E --> K["🤝 Sales Agents<br/>Region 1"]
+    F --> L["🤝 Sales Agents<br/>Region 2"]
+
+    G --> M["👨‍💼 Dev Agents<br/>Backend"]
+    H --> N["🔍 Test Agents<br/>QA"]
+
+    I --> O["📊 Inventory<br/>Agents"]
+    J --> P["🚚 Shipping<br/>Agents"]
+
+    style A fill:#4285f4,color:#fff,stroke:#1c3fa0,stroke-width:3px
+    style B fill:#34a853,color:#fff,stroke:#0d652d,stroke-width:2px
+    style C fill:#34a853,color:#fff,stroke:#0d652d,stroke-width:2px
+    style D fill:#34a853,color:#fff,stroke:#0d652d,stroke-width:2px
+    style E fill:#fbbc04,color:#000,stroke:#f57f17,stroke-width:2px
+    style F fill:#fbbc04,color:#000,stroke:#f57f17,stroke-width:2px
+    style G fill:#fbbc04,color:#000,stroke:#f57f17,stroke-width:2px
+    style H fill:#fbbc04,color:#000,stroke:#f57f17,stroke-width:2px
+    style I fill:#fbbc04,color:#000,stroke:#f57f17,stroke-width:2px
+    style J fill:#fbbc04,color:#000,stroke:#f57f17,stroke-width:2px
+    style K fill:#ea4335,color:#fff,stroke:#c5221f,stroke-width:1px
+    style L fill:#ea4335,color:#fff,stroke:#c5221f,stroke-width:1px
+    style M fill:#ea4335,color:#fff,stroke:#c5221f,stroke-width:1px
+    style N fill:#ea4335,color:#fff,stroke:#c5221f,stroke-width:1px
+    style O fill:#ea4335,color:#fff,stroke:#c5221f,stroke-width:1px
+    style P fill:#ea4335,color:#fff,stroke:#c5221f,stroke-width:1px
+
+
+%% Pattern Documentation
+%% ==================
+%% Pattern Name: Hierarchical Pattern
+%% Article: Article 2 - Multi-Agent Coordination Patterns
+%%
+%% Pattern Description:
+%% The Hierarchical Pattern organizes agents in a multi-level management structure,
+%% mirroring organizational hierarchies. Strategic decisions flow down while operational
+%% data flows up, creating layers of abstraction that manage complexity at scale.
+%% Each level has authority over its subordinates and responsibility to its superiors.
+%%
+%% Business Value:
+%% - Scalability: Manage complexity through layering
+%% - Clarity: Mirrors organizational structure (intuitive for humans)
+%% - Autonomy: Each level makes decisions within its scope
+%% - Information Flow: Strategic down, operational up
+%% - Accountability: Clear responsibility at each level
+%%
+%% Key Characteristics:
+%% 1. Multiple Levels: CEO → Managers → Supervisors → Workers
+%% 2. Chain of Command: Clear reporting structure
+%% 3. Delegation: Each level delegates to subordinates
+%% 4. Aggregation: Each level aggregates subordinate results
+%% 5. Strategy Cascade: Top-level goals flow down with translations
+%%
+%% Real-World Use Cases:
+%% 1. Global Supply Chain Coordination
+%%    - Strategic: Demand forecasting, capacity planning
+%%    - Regional: Inventory optimization per geography (4 regions)
+%%    - Operational: Order fulfillment, shipping (20+ agents)
+%%    - Result: 8→12 inventory turns, -67% stockouts, $45M WC reduction, 87%→96% on-time
+%%
+%% 2. Large Enterprise IT Operations
+%%    - Strategic: Infrastructure planning, budget allocation
+%%    - Regional: Data center operations, backup procedures
+%%    - Team: Server management, database administration
+%%    - Result: 99.99% uptime, faster incident response
+%%
+%% 3. Global Pharmaceutical R&D
+%%    - Strategic: Portfolio planning, molecule prioritization
+%%    - Regional: Trial site coordination, regulatory compliance
+%%    - Operational: Lab experiments, data collection
+%%    - Result: Faster time-to-market, better regulatory alignment
+%%
+%% 4. Financial Services Risk Management
+%%    - Strategic: Risk appetite, capital allocation
+%%    - Division: Credit risk, market risk, operational risk
+%%    - Desk: Individual position management
+%%    - Result: Better risk visibility, regulatory compliance
+%%
+%% 5. Marketing Campaign Management
+%%    - Strategic: Brand positioning, budget allocation
+%%    - Regional: Market adaptation, local campaigns
+%%    - Operational: Content creation, execution
+%%    - Result: Consistent branding with local relevance
+%%
+%% 6. Project Portfolio Management
+%%    - Strategic: Portfolio-level optimization
+%%    - Program: Cross-project coordination
+%%    - Project: Individual project execution
+%%    - Result: Better resource allocation, higher success rate
+%%
+%% Implementation Patterns:
+%% - Top-Down Planning: Strategic decisions flow down
+%% - Bottom-Up Reporting: Operational metrics flow up
+%% - Delegation: Each level delegates to next
+%% - Goal Cascade: Translate strategic goals to tactical
+%% - Exception Management: Escalate unexpected situations
+%%
+%% When To Use:
+%% ✓ Large-scale systems requiring multiple management levels
+%% ✓ Organization mirrors agent structure (natural fit)
+%% ✓ Need to manage complexity through layering
+%% ✓ Different decision types at different levels
+%% ✓ Clear accountability structures required
+%%
+%% When NOT To Use:
+%% ✗ Small systems (overhead not justified)
+%% ✗ Highly interdependent tasks (hierarchies create delays)
+%% ✗ Need for rapid decision-making
+%%
+%% Organizational Levels:
+%% 1. Strategic (Top): Long-term planning, budgets, priorities
+%% 2. Tactical (Middle): Translate strategy to operations, coordinate
+%% 3. Operational (Bottom): Execute tasks, collect metrics
+%%
+%% Information Flow:
+%% - DOWN: Goals, budgets, priorities, strategies
+%% - UP: Metrics, exceptions, status, performance
+%% - ACROSS: Coordination between peers
+%%
+%% Performance Characteristics:
+%% - Latency: Communication overhead increases with levels
+%% - Throughput: Scales with number of workers
+%% - Scalability: Excellent (designed for scale)
+%% - Resilience: High (distributed authority)
+%% - Cost: Proportional to number of agents
+%%
+%% Failure Handling:
+%% - Local Failures: Managed at lowest appropriate level
+%% - Escalation: Unresolved issues escalate to superiors
+%% - Redundancy: Peer coverage if agent fails
+%% - Rebalancing: Redistribute work if level fails
+%%
+%% Related Patterns:
+%% - Supervisor Pattern: Single-level routing
+%% - Handoff Pattern: Transfer between specialists
+%% - Parallel Pattern: Sibling agents working together
+%% - Network/Swarm: Flat peer-to-peer vs hierarchical
