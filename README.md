@@ -8,10 +8,10 @@ This repository accompanies a Medium article series exploring the complete lands
 
 ### Series Navigation
 
-1. **[Foundational Patterns](./1-foundational/)** - 9 core building blocks
-2. **[Orchestration & Collaboration](./2-orchestration/)** - 9 multi-agent patterns
-3. **[Intelligence & Learning](./3-intelligence/)** - 9 adaptive patterns
-4. **[Production & Safety](./4-production/)** - 8 enterprise patterns
+1. **[Foundational Patterns](./1-foundational/)** - 8 core building blocks
+2. **[Orchestration & Collaboration](./2-orchestration/)** - 10 multi-agent patterns
+3. **[Governance & Reliability](./3-intelligence/)** - 11 governance patterns
+4. **[Advanced & Learning](./4-production/)** - 6 advanced patterns
 
 ## 🎯 What You'll Learn
 
@@ -25,20 +25,20 @@ This repository accompanies a Medium article series exploring the complete lands
 
 ```
 agentic-patterns/
-├── 1-foundational/      # Core patterns (Prompt Chaining, Routing, etc.)
-├── 2-orchestration/     # Multi-agent coordination (MCP, A2A, RAG)
-├── 3-intelligence/      # Learning and adaptation patterns
-├── 4-production/        # Safety, compliance, and scale patterns
-├── shared-utilities/    # Reusable components and tools
-├── diagrams/            # All Mermaid diagrams
-└── docs/                # Guides and comparisons
+├── 1-foundational/          # Core patterns (9 patterns)
+├── 2-orchestration/         # Multi-agent coordination (9 patterns)
+├── 3-intelligence/          # Learning and adaptation (9 patterns)
+├── 4-production/            # Safety, compliance, and scale (8 patterns)
+├── shared-utilities/        # Reusable components and tools
+├── tests/                   # Test suite
+└── docs/                    # Guides and comparisons
 ```
 
 ## 🚀 Quick Start
 
 ### Prerequisites
 
-- Python 3.10+
+- Python 3.12+
 - uv (Python package manager)
 - Google Cloud account (for ADK examples)
 - API keys for OpenAI/Anthropic (for CrewAI examples)
@@ -111,7 +111,7 @@ Core building blocks for individual agent behavior
 | ReAct | Reasoning + action in feedback loop | Medical diagnosis |
 | Chain-of-Thought (CoT) | Explicit reasoning steps | Financial audit |
 
-### Article 2: Multi-Agent Coordination (10 patterns)
+### Article 2: Orchestration & Collaboration (10 patterns)
 Orchestrating complex AI workflows at scale
 
 | Pattern | Description | Use Case |
@@ -201,8 +201,6 @@ See [3-intelligence/benchmarks/](./3-intelligence/benchmarks/) for detailed resu
 
 - **[Pattern Comparison Matrix](./docs/pattern-comparison-matrix.md)**: Side-by-side pattern analysis
 - **[Framework Selection Guide](./docs/framework-selection-guide.md)**: Choose ADK vs CrewAI
-- **[Deployment Checklist](./docs/deployment-checklist.md)**: Production readiness guide
-- **[CLAUDE.md](./CLAUDE.md)**: Development guidelines for contributors
 
 ## 🤝 Contributing
 
@@ -219,16 +217,12 @@ GPL-3.0 - See [LICENSE](./LICENSE) for details
 
 ## 🔗 Links
 
-- **Medium Series**: [Coming Soon]
-- **Video Tutorials**: [NotebookLM Channel]
-- **Twitter Thread**: [@YourHandle]
+- **Medium Series**: [Article 1](https://medium.com/@gazzumatteo/foundational-agentic-design-patterns-build-production-ready-ai-agents-with-google-adk-crewai-58b226da96b4) - Article 2 - Article 3 - Article 4
+- **Videos**: [Notebook LM Patterns Summary](https://www.youtube.com/playlist?list=PL8rc8p1gV5VAVEeUg38aP3IorDQLJw4vm)
 
 ## ⭐ Star History
 
 If you find this helpful, please star the repo and share with others!
 
 ---
-
-**Built with**: Google ADK, CrewAI, LangChain, Vertex AI
-**Maintained by**: [Your Name]
 **Last Updated**: November 2025
