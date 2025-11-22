@@ -1,0 +1,15 @@
+graph LR
+    A[SMART Goal] --> B[Agent Execution]
+    B --> C[Progress Tracking]
+    C --> D[Metrics Collection]
+    D --> E{Goal<br/>Achieved?}
+    E -->|No| F[Adjust Strategy]
+    F --> B
+    E -->|Yes| G[Success Report]
+    style A fill:#4285f4,color:#fff
+    style B fill:#4285f4,color:#fff
+    style C fill:#fbbc04,color:#000
+    style D fill:#fbbc04,color:#000
+    style E fill:#fbbc04,color:#000
+    style F fill:#ea4335,color:#fff
+    style G fill:#34a853,color:#fff

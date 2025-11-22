@@ -1,0 +1,20 @@
+graph TD
+    A[Operation Start] --> B[Create<br/>Checkpoint]
+    B --> C[Execute Changes]
+    C --> D[Validate Results]
+    D --> E{Valid?}
+    E -->|Yes| F[Commit Changes]
+    E -->|No| G[Rollback to<br/>Checkpoint]
+    G --> H[Alert & Review]
+    F --> I[Success]
+    H --> J[Manual Intervention]
+    style A fill:#fff,stroke:#4285f4,stroke-width:2px
+    style B fill:#fbbc04,color:#000
+    style C fill:#4285f4,color:#fff
+    style D fill:#4285f4,color:#fff
+    style E fill:#fbbc04,color:#000
+    style F fill:#34a853,color:#fff
+    style G fill:#ea4335,color:#fff
+    style H fill:#ea4335,color:#fff
+    style I fill:#34a853,color:#fff
+    style J fill:#fbbc04,color:#000

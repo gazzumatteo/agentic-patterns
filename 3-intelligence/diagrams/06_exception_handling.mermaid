@@ -1,0 +1,21 @@
+graph TD
+    A[Operation] --> B{Try}
+    B -->|Success| C[Continue]
+    B -->|Failure| D[Catch Exception]
+    D --> E{Retry<br/>Logic}
+    E -->|Attempt 1-3| F[Exponential<br/>Backoff]
+    F --> A
+    E -->|Max Retries| G[Circuit<br/>Breaker]
+    G --> H{Fallback<br/>Available?}
+    H -->|Yes| I[Alternative Path]
+    H -->|No| J[Graceful<br/>Degradation]
+    style A fill:#fff,stroke:#4285f4,stroke-width:2px
+    style B fill:#4285f4,color:#fff
+    style C fill:#34a853,color:#fff
+    style D fill:#ea4335,color:#fff
+    style E fill:#fbbc04,color:#000
+    style F fill:#fbbc04,color:#000
+    style G fill:#fbbc04,color:#000
+    style H fill:#fbbc04,color:#000
+    style I fill:#34a853,color:#fff
+    style J fill:#34a853,color:#fff

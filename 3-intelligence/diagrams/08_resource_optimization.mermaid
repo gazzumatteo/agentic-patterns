@@ -1,0 +1,16 @@
+graph TD
+    A[Query] --> B[Complexity<br/>Assessment]
+    B --> C{Score}
+    C -->|Low < 0.3| D[Gemini Flash<br/>Fast/Cheap]
+    C -->|Med 0.3-0.7| E[Gemini Pro<br/>Balanced]
+    C -->|High > 0.7| F[Gemini Ultra<br/>Powerful]
+    D --> G[Response]
+    E --> G
+    F --> G
+    style A fill:#fff,stroke:#4285f4,stroke-width:2px
+    style B fill:#fbbc04,color:#000
+    style C fill:#fbbc04,color:#000
+    style D fill:#34a853,color:#fff
+    style E fill:#4285f4,color:#fff
+    style F fill:#ea4335,color:#fff
+    style G fill:#fff,stroke:#34a853,stroke-width:2px

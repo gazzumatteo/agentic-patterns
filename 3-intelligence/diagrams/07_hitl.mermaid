@@ -1,0 +1,14 @@
+sequenceDiagram
+    participant A as Agent
+    participant W as Workflow
+    participant H as Human
+    participant S as System
+
+    A->>W: Process Task
+    W->>W: Reach Decision Point
+    W->>H: Request Approval
+    Note over H: Review Context<br/>& Artifacts
+    H->>W: Approve/Modify/Reject
+    W->>A: Continue with Decision
+    A->>S: Execute Action
+    S->>A: Confirmation

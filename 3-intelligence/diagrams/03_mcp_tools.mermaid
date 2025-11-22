@@ -1,0 +1,18 @@
+graph LR
+    A[Agent] --> B[MCP Protocol Layer]
+    B --> C[Authentication]
+    C --> D[Rate Limiting]
+    D --> E[Retry Logic]
+    E --> F[Enterprise API]
+    F --> G[Audit Log]
+    G --> H[Response]
+    H --> B
+    B --> A
+    style A fill:#4285f4,color:#fff
+    style B fill:#4285f4,color:#fff,stroke-width:2px
+    style C fill:#ea4335,color:#fff
+    style D fill:#fbbc04,color:#000
+    style E fill:#fbbc04,color:#000
+    style F fill:#34a853,color:#fff
+    style G fill:#34a853,color:#fff
+    style H fill:#fff,stroke:#4285f4,stroke-width:2px

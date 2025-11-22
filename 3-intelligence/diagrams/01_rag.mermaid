@@ -1,0 +1,16 @@
+graph TB
+    A[User Query] --> B[RAG Agent]
+    B --> C[Retrieval Module]
+    C --> D[(Vector DB)]
+    D --> E[Retrieved Docs]
+    E --> F[Context Injection]
+    F --> G[LLM Generation]
+    G --> H[Response]
+    style A fill:#fff,stroke:#4285f4,stroke-width:2px
+    style B fill:#4285f4,color:#fff
+    style C fill:#4285f4,color:#fff,stroke-width:2px
+    style D fill:#34a853,color:#fff
+    style E fill:#34a853,color:#fff
+    style F fill:#fbbc04,color:#000
+    style G fill:#ea4335,color:#fff
+    style H fill:#34a853,color:#fff
