@@ -1,0 +1,452 @@
+{
+  "1-foundational": {
+    "adk_examples": [
+      {
+        "name": "01_simple_agent.py",
+        "path": "1-foundational/adk-examples/01_simple_agent.py",
+        "success": true,
+        "error": null
+      },
+      {
+        "name": "02_memory_augmented_agent.py",
+        "path": "1-foundational/adk-examples/02_memory_augmented_agent.py",
+        "success": true,
+        "error": null
+      },
+      {
+        "name": "03_tool_using_agent.py",
+        "path": "1-foundational/adk-examples/03_tool_using_agent.py",
+        "success": true,
+        "error": null
+      },
+      {
+        "name": "04_planning.py",
+        "path": "1-foundational/adk-examples/04_planning.py",
+        "success": true,
+        "error": null
+      },
+      {
+        "name": "05_reflection_generator_critic.py",
+        "path": "1-foundational/adk-examples/05_reflection_generator_critic.py",
+        "success": true,
+        "error": null
+      },
+      {
+        "name": "06_loop_cyclic.py",
+        "path": "1-foundational/adk-examples/06_loop_cyclic.py",
+        "success": true,
+        "error": null
+      },
+      {
+        "name": "07_react.py",
+        "path": "1-foundational/adk-examples/07_react.py",
+        "success": true,
+        "error": null
+      },
+      {
+        "name": "08_chain_of_thought.py",
+        "path": "1-foundational/adk-examples/08_chain_of_thought.py",
+        "success": true,
+        "error": null
+      },
+      {
+        "name": "09_evals.py",
+        "path": "1-foundational/adk-examples/09_evals.py",
+        "success": true,
+        "error": null
+      }
+    ],
+    "crewai_examples": [
+      {
+        "name": "01_simple_agent.py",
+        "path": "1-foundational/crewai-examples/01_simple_agent.py",
+        "success": true,
+        "error": null
+      },
+      {
+        "name": "02_memory_augmented_agent.py",
+        "path": "1-foundational/crewai-examples/02_memory_augmented_agent.py",
+        "success": true,
+        "error": null
+      },
+      {
+        "name": "03_tool_using_agent.py",
+        "path": "1-foundational/crewai-examples/03_tool_using_agent.py",
+        "success": true,
+        "error": null
+      },
+      {
+        "name": "04_planning.py",
+        "path": "1-foundational/crewai-examples/04_planning.py",
+        "success": true,
+        "error": null
+      },
+      {
+        "name": "05_reflection_generator_critic.py",
+        "path": "1-foundational/crewai-examples/05_reflection_generator_critic.py",
+        "success": true,
+        "error": null
+      },
+      {
+        "name": "06_loop_cyclic.py",
+        "path": "1-foundational/crewai-examples/06_loop_cyclic.py",
+        "success": true,
+        "error": null
+      },
+      {
+        "name": "07_react.py",
+        "path": "1-foundational/crewai-examples/07_react.py",
+        "success": true,
+        "error": null
+      },
+      {
+        "name": "08_chain_of_thought.py",
+        "path": "1-foundational/crewai-examples/08_chain_of_thought.py",
+        "success": true,
+        "error": null
+      }
+    ]
+  },
+  "2-orchestration": {
+    "adk_examples": [
+      {
+        "name": "01_sequential_orchestration.py",
+        "path": "2-orchestration/adk-examples/01_sequential_orchestration.py",
+        "success": true,
+        "error": null
+      },
+      {
+        "name": "02_parallel_orchestration.py",
+        "path": "2-orchestration/adk-examples/02_parallel_orchestration.py",
+        "success": true,
+        "error": null
+      },
+      {
+        "name": "03_supervisor_pattern.py",
+        "path": "2-orchestration/adk-examples/03_supervisor_pattern.py",
+        "success": true,
+        "error": null
+      },
+      {
+        "name": "04_hierarchical_pattern.py",
+        "path": "2-orchestration/adk-examples/04_hierarchical_pattern.py",
+        "success": true,
+        "error": null
+      },
+      {
+        "name": "05_competitive_pattern.py",
+        "path": "2-orchestration/adk-examples/05_competitive_pattern.py",
+        "success": true,
+        "error": null
+      },
+      {
+        "name": "06_network_swarm_pattern.py",
+        "path": "2-orchestration/adk-examples/06_network_swarm_pattern.py",
+        "success": true,
+        "error": null
+      },
+      {
+        "name": "07_handoff_orchestration.py",
+        "path": "2-orchestration/adk-examples/07_handoff_orchestration.py",
+        "success": true,
+        "error": null
+      },
+      {
+        "name": "08_blackboard_pattern.py",
+        "path": "2-orchestration/adk-examples/08_blackboard_pattern.py",
+        "success": true,
+        "error": null
+      },
+      {
+        "name": "09_magentic_orchestration.py",
+        "path": "2-orchestration/adk-examples/09_magentic_orchestration.py",
+        "success": true,
+        "error": null
+      },
+      {
+        "name": "10_market_based_pattern.py",
+        "path": "2-orchestration/adk-examples/10_market_based_pattern.py",
+        "success": true,
+        "error": null
+      }
+    ],
+    "crewai_examples": [
+      {
+        "name": "01_sequential_orchestration.py",
+        "path": "2-orchestration/crewai-examples/01_sequential_orchestration.py",
+        "success": true,
+        "error": null
+      },
+      {
+        "name": "02_parallel_orchestration.py",
+        "path": "2-orchestration/crewai-examples/02_parallel_orchestration.py",
+        "success": true,
+        "error": null
+      },
+      {
+        "name": "03_supervisor_pattern.py",
+        "path": "2-orchestration/crewai-examples/03_supervisor_pattern.py",
+        "success": false,
+        "error": "Timeout after 300 seconds"
+      },
+      {
+        "name": "04_hierarchical_pattern.py",
+        "path": "2-orchestration/crewai-examples/04_hierarchical_pattern.py",
+        "success": false,
+        "error": "Timeout after 300 seconds"
+      },
+      {
+        "name": "05_competitive_pattern.py",
+        "path": "2-orchestration/crewai-examples/05_competitive_pattern.py",
+        "success": false,
+        "error": "Timeout after 300 seconds"
+      },
+      {
+        "name": "06_network_swarm_pattern.py",
+        "path": "2-orchestration/crewai-examples/06_network_swarm_pattern.py",
+        "success": false,
+        "error": "ERROR:root:Failed to connect to OpenAI API: Connection error."
+      },
+      {
+        "name": "07_handoff_orchestration.py",
+        "path": "2-orchestration/crewai-examples/07_handoff_orchestration.py",
+        "success": false,
+        "error": "ERROR:root:Failed to connect to OpenAI API: Connection error."
+      },
+      {
+        "name": "08_blackboard_pattern.py",
+        "path": "2-orchestration/crewai-examples/08_blackboard_pattern.py",
+        "success": false,
+        "error": "ERROR:root:Failed to connect to OpenAI API: Connection error."
+      },
+      {
+        "name": "09_magentic_orchestration.py",
+        "path": "2-orchestration/crewai-examples/09_magentic_orchestration.py",
+        "success": true,
+        "error": null
+      },
+      {
+        "name": "10_market_based_pattern.py",
+        "path": "2-orchestration/crewai-examples/10_market_based_pattern.py",
+        "success": true,
+        "error": null
+      }
+    ]
+  },
+  "3-intelligence": {
+    "adk_examples": [
+      {
+        "name": "01_rag.py",
+        "path": "3-intelligence/adk-examples/01_rag.py",
+        "success": true,
+        "error": null
+      },
+      {
+        "name": "02_agentic_rag.py",
+        "path": "3-intelligence/adk-examples/02_agentic_rag.py",
+        "success": true,
+        "error": null
+      },
+      {
+        "name": "03_mcp_tools.py",
+        "path": "3-intelligence/adk-examples/03_mcp_tools.py",
+        "success": true,
+        "error": null
+      },
+      {
+        "name": "04_a2a_protocol.py",
+        "path": "3-intelligence/adk-examples/04_a2a_protocol.py",
+        "success": true,
+        "error": null
+      },
+      {
+        "name": "05_guardrails_safety.py",
+        "path": "3-intelligence/adk-examples/05_guardrails_safety.py",
+        "success": false,
+        "error": "Traceback (most recent call last):\n  File \"/Users/matteo/GitRepositories/Gazzumatteo/agentic-patterns/3-intelligence/adk-examples/05_guardrails_safety.py\", line 382, in <module>\n    asyncio.run(demonstrate_guardrails_pattern())\n  File \"/Users/matteo/miniconda3/lib/python3.12/asyncio/runners.py\", line 194, in run\n    return runner.run(main)\n           ^^^^^^^^^^^^^^^^\n  File \"/Users/matteo/miniconda3/lib/python3.12/asyncio/runners.py\", line 118, in run\n    return self._loop.run_until_complete(task)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/matteo/miniconda3/lib/python3.12/asyncio/base_events.py\", line 686, in run_until_complete"
+      },
+      {
+        "name": "06_exception_handling.py",
+        "path": "3-intelligence/adk-examples/06_exception_handling.py",
+        "success": true,
+        "error": null
+      },
+      {
+        "name": "07_hitl.py",
+        "path": "3-intelligence/adk-examples/07_hitl.py",
+        "success": false,
+        "error": "Timeout after 180 seconds"
+      },
+      {
+        "name": "08_resource_optimization.py",
+        "path": "3-intelligence/adk-examples/08_resource_optimization.py",
+        "success": true,
+        "error": null
+      },
+      {
+        "name": "09_prioritization.py",
+        "path": "3-intelligence/adk-examples/09_prioritization.py",
+        "success": true,
+        "error": null
+      },
+      {
+        "name": "10_goal_monitoring.py",
+        "path": "3-intelligence/adk-examples/10_goal_monitoring.py",
+        "success": true,
+        "error": null
+      },
+      {
+        "name": "11_checkpoint_rollback.py",
+        "path": "3-intelligence/adk-examples/11_checkpoint_rollback.py",
+        "success": true,
+        "error": null
+      }
+    ],
+    "crewai_examples": [
+      {
+        "name": "01_rag.py",
+        "path": "3-intelligence/crewai-examples/01_rag.py",
+        "success": true,
+        "error": null
+      },
+      {
+        "name": "02_agentic_rag.py",
+        "path": "3-intelligence/crewai-examples/02_agentic_rag.py",
+        "success": true,
+        "error": null
+      },
+      {
+        "name": "03_mcp_tools.py",
+        "path": "3-intelligence/crewai-examples/03_mcp_tools.py",
+        "success": true,
+        "error": null
+      },
+      {
+        "name": "04_a2a_protocol.py",
+        "path": "3-intelligence/crewai-examples/04_a2a_protocol.py",
+        "success": true,
+        "error": null
+      },
+      {
+        "name": "05_guardrails_safety.py",
+        "path": "3-intelligence/crewai-examples/05_guardrails_safety.py",
+        "success": true,
+        "error": null
+      },
+      {
+        "name": "06_exception_handling.py",
+        "path": "3-intelligence/crewai-examples/06_exception_handling.py",
+        "success": true,
+        "error": null
+      },
+      {
+        "name": "07_hitl.py",
+        "path": "3-intelligence/crewai-examples/07_hitl.py",
+        "success": true,
+        "error": null
+      },
+      {
+        "name": "08_resource_optimization.py",
+        "path": "3-intelligence/crewai-examples/08_resource_optimization.py",
+        "success": true,
+        "error": null
+      },
+      {
+        "name": "09_prioritization.py",
+        "path": "3-intelligence/crewai-examples/09_prioritization.py",
+        "success": true,
+        "error": null
+      },
+      {
+        "name": "10_goal_monitoring.py",
+        "path": "3-intelligence/crewai-examples/10_goal_monitoring.py",
+        "success": true,
+        "error": null
+      },
+      {
+        "name": "11_checkpoint_rollback.py",
+        "path": "3-intelligence/crewai-examples/11_checkpoint_rollback.py",
+        "success": true,
+        "error": null
+      }
+    ]
+  },
+  "4-production": {
+    "adk_examples": [
+      {
+        "name": "01_learning_adaptation.py",
+        "path": "4-production/adk-examples/01_learning_adaptation.py",
+        "success": false,
+        "error": "Traceback (most recent call last):\n  File \"/Users/matteo/GitRepositories/Gazzumatteo/agentic-patterns/4-production/adk-examples/01_learning_adaptation.py\", line 436, in <module>\n    asyncio.run(main())\n  File \"/Users/matteo/miniconda3/lib/python3.12/asyncio/runners.py\", line 194, in run\n    return runner.run(main)\n           ^^^^^^^^^^^^^^^^\n  File \"/Users/matteo/miniconda3/lib/python3.12/asyncio/runners.py\", line 118, in run\n    return self._loop.run_until_complete(task)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/matteo/miniconda3/lib/python3.12/asyncio/base_events.py\", line 686, in run_until_complete"
+      },
+      {
+        "name": "02_exploration_discovery.py",
+        "path": "4-production/adk-examples/02_exploration_discovery.py",
+        "success": false,
+        "error": "Traceback (most recent call last):\n  File \"/Users/matteo/GitRepositories/Gazzumatteo/agentic-patterns/4-production/adk-examples/02_exploration_discovery.py\", line 506, in <module>\n    asyncio.run(main())\n  File \"/Users/matteo/miniconda3/lib/python3.12/asyncio/runners.py\", line 194, in run\n    return runner.run(main)\n           ^^^^^^^^^^^^^^^^\n  File \"/Users/matteo/miniconda3/lib/python3.12/asyncio/runners.py\", line 118, in run\n    return self._loop.run_until_complete(task)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/matteo/miniconda3/lib/python3.12/asyncio/base_events.py\", line 686, in run_until_complete"
+      },
+      {
+        "name": "03_evolutionary_curriculum.py",
+        "path": "4-production/adk-examples/03_evolutionary_curriculum.py",
+        "success": false,
+        "error": "Traceback (most recent call last):\n  File \"/Users/matteo/GitRepositories/Gazzumatteo/agentic-patterns/4-production/adk-examples/03_evolutionary_curriculum.py\", line 427, in <module>\n    asyncio.run(main())\n  File \"/Users/matteo/miniconda3/lib/python3.12/asyncio/runners.py\", line 194, in run\n    return runner.run(main)\n           ^^^^^^^^^^^^^^^^\n  File \"/Users/matteo/miniconda3/lib/python3.12/asyncio/runners.py\", line 118, in run\n    return self._loop.run_until_complete(task)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/matteo/miniconda3/lib/python3.12/asyncio/base_events.py\", line 686, in run_until_complete"
+      },
+      {
+        "name": "04_modular_agent.py",
+        "path": "4-production/adk-examples/04_modular_agent.py",
+        "success": false,
+        "error": "Traceback (most recent call last):\n  File \"/Users/matteo/GitRepositories/Gazzumatteo/agentic-patterns/4-production/adk-examples/04_modular_agent.py\", line 357, in <module>\n    asyncio.run(main())\n  File \"/Users/matteo/miniconda3/lib/python3.12/asyncio/runners.py\", line 194, in run\n    return runner.run(main)\n           ^^^^^^^^^^^^^^^^\n  File \"/Users/matteo/miniconda3/lib/python3.12/asyncio/runners.py\", line 118, in run\n    return self._loop.run_until_complete(task)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/matteo/miniconda3/lib/python3.12/asyncio/base_events.py\", line 686, in run_until_complete"
+      },
+      {
+        "name": "05_maker_checker.py",
+        "path": "4-production/adk-examples/05_maker_checker.py",
+        "success": false,
+        "error": "Traceback (most recent call last):\n  File \"/Users/matteo/GitRepositories/Gazzumatteo/agentic-patterns/4-production/adk-examples/05_maker_checker.py\", line 262, in <module>\n    asyncio.run(main())\n  File \"/Users/matteo/miniconda3/lib/python3.12/asyncio/runners.py\", line 194, in run\n    return runner.run(main)\n           ^^^^^^^^^^^^^^^^\n  File \"/Users/matteo/miniconda3/lib/python3.12/asyncio/runners.py\", line 118, in run\n    return self._loop.run_until_complete(task)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/matteo/miniconda3/lib/python3.12/asyncio/base_events.py\", line 686, in run_until_complete"
+      },
+      {
+        "name": "06_abm.py",
+        "path": "4-production/adk-examples/06_abm.py",
+        "success": false,
+        "error": "Traceback (most recent call last):\n  File \"/Users/matteo/GitRepositories/Gazzumatteo/agentic-patterns/4-production/adk-examples/06_abm.py\", line 351, in <module>\n    asyncio.run(main())\n  File \"/Users/matteo/miniconda3/lib/python3.12/asyncio/runners.py\", line 194, in run\n    return runner.run(main)\n           ^^^^^^^^^^^^^^^^\n  File \"/Users/matteo/miniconda3/lib/python3.12/asyncio/runners.py\", line 118, in run\n    return self._loop.run_until_complete(task)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/matteo/miniconda3/lib/python3.12/asyncio/base_events.py\", line 686, in run_until_complete"
+      }
+    ],
+    "crewai_examples": [
+      {
+        "name": "01_learning_adaptation.py",
+        "path": "4-production/crewai-examples/01_learning_adaptation.py",
+        "success": true,
+        "error": null
+      },
+      {
+        "name": "02_exploration_discovery.py",
+        "path": "4-production/crewai-examples/02_exploration_discovery.py",
+        "success": false,
+        "error": "Timeout after 400 seconds"
+      },
+      {
+        "name": "03_evolutionary_curriculum.py",
+        "path": "4-production/crewai-examples/03_evolutionary_curriculum.py",
+        "success": false,
+        "error": "Timeout after 400 seconds"
+      },
+      {
+        "name": "04_modular_agent.py",
+        "path": "4-production/crewai-examples/04_modular_agent.py",
+        "success": true,
+        "error": null
+      },
+      {
+        "name": "05_maker_checker.py",
+        "path": "4-production/crewai-examples/05_maker_checker.py",
+        "success": true,
+        "error": null
+      },
+      {
+        "name": "06_abm.py",
+        "path": "4-production/crewai-examples/06_abm.py",
+        "success": true,
+        "error": null
+      }
+    ]
+  }
+}

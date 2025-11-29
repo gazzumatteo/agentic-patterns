@@ -1,0 +1,175 @@
+{
+  "audit_log_schema": "v1.0",
+  "log_entry": {
+    "timestamp": "ISO 8601 timestamp",
+    "event_id": "Unique event identifier (UUID)",
+    "event_type": "Type of event (e.g., agent_invocation, tool_use, data_access, policy_violation)",
+    "severity": "INFO|WARN|ERROR|CRITICAL",
+
+    "agent": {
+      "agent_id": "Unique agent identifier",
+      "agent_name": "Human-readable agent name",
+      "agent_version": "Version of the agent",
+      "agent_type": "Type (e.g., LlmAgent, SequentialAgent, ParallelAgent)"
+    },
+
+    "user": {
+      "user_id": "User identifier (anonymized if PII)",
+      "session_id": "Session identifier",
+      "ip_address": "Client IP (hashed if sensitive)",
+      "user_agent": "Browser/client information"
+    },
+
+    "request": {
+      "request_id": "Unique request identifier",
+      "input_data": "Input data (sanitized, no PII)",
+      "input_tokens": "Number of input tokens",
+      "parameters": {
+        "temperature": "Model temperature",
+        "max_tokens": "Maximum output tokens",
+        "tools": ["List of tools available"]
+      }
+    },
+
+    "execution": {
+      "status": "success|failure|timeout|blocked",
+      "duration_ms": "Execution duration in milliseconds",
+      "model_name": "LLM model used",
+      "tools_used": [
+        {
+          "tool_name": "Name of tool",
+          "tool_calls": "Number of calls",
+          "tool_results": "Success/failure count"
+        }
+      ],
+      "loops_executed": "Number of loop iterations (if applicable)",
+      "parallel_tasks": "Number of parallel executions (if applicable)"
+    },
+
+    "response": {
+      "output_data": "Output data (sanitized, no PII)",
+      "output_tokens": "Number of output tokens",
+      "confidence_score": "Confidence level (0.0 to 1.0)",
+      "citations": ["List of sources used"],
+      "artifacts_created": ["List of generated artifacts"]
+    },
+
+    "compliance": {
+      "guardrails_triggered": ["List of triggered guardrails"],
+      "policies_checked": ["List of policies evaluated"],
+      "policy_violations": ["Any violations detected"],
+      "data_classification": "PUBLIC|INTERNAL|CONFIDENTIAL|RESTRICTED",
+      "pii_detected": true,
+      "pii_handling": "How PII was handled",
+      "retention_policy": "Data retention period"
+    },
+
+    "performance": {
+      "latency_ms": "End-to-end latency",
+      "llm_latency_ms": "LLM-specific latency",
+      "tool_latency_ms": "Tool execution latency",
+      "cache_hit": true,
+      "cost_estimate": "Estimated cost in USD"
+    },
+
+    "errors": {
+      "error_occurred": false,
+      "error_type": "Type of error if any",
+      "error_message": "Error message (sanitized)",
+      "error_stack": "Stack trace (if applicable)",
+      "retry_count": "Number of retries attempted",
+      "fallback_triggered": "Whether fallback was used"
+    },
+
+    "security": {
+      "authentication_method": "Method used for auth",
+      "authorization_result": "Authorized/Denied",
+      "rate_limit_status": "Rate limit remaining",
+      "suspicious_activity": false,
+      "threat_indicators": ["Any detected threats"]
+    },
+
+    "metadata": {
+      "environment": "development|staging|production",
+      "region": "Deployment region",
+      "version": "Application version",
+      "correlation_id": "For distributed tracing",
+      "parent_event_id": "If part of a workflow",
+      "tags": ["custom", "tags", "for", "filtering"]
+    }
+  },
+
+  "example_entries": [
+    {
+      "timestamp": "2025-11-18T10:30:45.123Z",
+      "event_id": "550e8400-e29b-41d4-a716-446655440000",
+      "event_type": "agent_invocation",
+      "severity": "INFO",
+      "agent": {
+        "agent_id": "adaptive-pricing-agent-v2",
+        "agent_name": "AdaptivePricingAgent",
+        "agent_version": "2.1.0",
+        "agent_type": "LlmAgent"
+      },
+      "user": {
+        "user_id": "user-12345-hashed",
+        "session_id": "sess-abc-xyz-789",
+        "ip_address": "192.168.1.1-hashed",
+        "user_agent": "Mozilla/5.0..."
+      },
+      "execution": {
+        "status": "success",
+        "duration_ms": 1250,
+        "model_name": "gemini-2.5-flash",
+        "tools_used": [
+          {
+            "tool_name": "calculate_adaptive_price",
+            "tool_calls": 1,
+            "tool_results": "1 success"
+          }
+        ]
+      },
+      "compliance": {
+        "guardrails_triggered": [],
+        "policies_checked": ["pricing_policy", "rate_limit_policy"],
+        "policy_violations": [],
+        "data_classification": "INTERNAL",
+        "pii_detected": false
+      },
+      "performance": {
+        "latency_ms": 1250,
+        "cost_estimate": 0.002
+      }
+    },
+    {
+      "timestamp": "2025-11-18T10:31:12.456Z",
+      "event_id": "660e8400-e29b-41d4-a716-446655440001",
+      "event_type": "policy_violation",
+      "severity": "WARN",
+      "agent": {
+        "agent_id": "customer-service-agent-v1",
+        "agent_name": "CustomerServiceAgent",
+        "agent_version": "1.0.0",
+        "agent_type": "LlmAgent"
+      },
+      "compliance": {
+        "guardrails_triggered": ["pii_detection_guardrail"],
+        "policy_violations": ["attempted_pii_exposure"],
+        "pii_detected": true,
+        "pii_handling": "redacted_and_logged"
+      },
+      "security": {
+        "suspicious_activity": true,
+        "threat_indicators": ["potential_data_exfiltration"]
+      }
+    }
+  ],
+
+  "storage_recommendations": {
+    "retention_period": "Minimum 1 year for compliance, 3+ years recommended",
+    "encryption": "Encrypt at rest and in transit",
+    "access_control": "Role-based access with audit trail",
+    "backup": "Daily backups with 30-day retention",
+    "compliance": "Ensure GDPR, SOC2, HIPAA compliance as applicable"
+  }
+}

@@ -1,0 +1,44 @@
+```mermaid
+graph LR
+    Input[Task Input] --> MetaCtrl[Meta-Controller<br/>Router]
+
+    MetaCtrl --> Analysis{Module<br/>Selection}
+
+    Analysis -->|Perception| PercMod[Perception<br/>Module]
+    Analysis -->|Memory| MemMod[Memory<br/>Module]
+    Analysis -->|Reasoning| ReasonMod[Reasoning<br/>Module]
+    Analysis -->|Action| ActionMod[Action<br/>Module]
+
+    PercMod --> Assembly[Dynamic<br/>Assembly]
+    MemMod --> Assembly
+    ReasonMod --> Assembly
+    ActionMod --> Assembly
+
+    Assembly --> Custom[Custom Agent<br/>Instance]
+    Custom --> Execute[Task<br/>Execution]
+    Execute --> Disassemble[Disassembly &<br/>Cleanup]
+
+    style MetaCtrl fill:#4285f4,color:#fff
+    style Assembly fill:#34a853,color:#fff
+    style Custom fill:#fbbc04,color:#000
+    style Analysis fill:#ea4335,color:#fff
+```
+
+**Pattern 33: Self-Organizing Modular Agent**
+
+Dynamic assembly of specialized modules based on task requirements. One platform, infinite configurations through composable intelligence.
+
+**Key Components:**
+- Meta-controller for intelligent routing
+- Modular capability pool
+- Dynamic module selection
+- Runtime assembly
+- Customized agent instance
+- Clean resource disassembly
+
+**Business Value:**
+- 90% reduction in training costs
+- Support multiple channels with one system
+- 87% first-contact resolution
+- Scale by adding modules, not rebuilding systems
+- Ultimate flexibility and agility

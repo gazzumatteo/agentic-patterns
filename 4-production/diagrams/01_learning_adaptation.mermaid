@@ -1,0 +1,41 @@
+```mermaid
+graph TB
+    Task[Task Attempt] --> Measure[Measure Outcome]
+    Measure --> Metrics{Success<br/>Metrics}
+
+    Metrics -->|Below Target| Analyze[Analyze Failure]
+    Analyze --> Extract[Extract Insights]
+    Extract --> UpdateStrat[Update Strategy]
+
+    Metrics -->|Meets Target| Reinforce[Reinforce Strategy]
+    Reinforce --> UpdateStrat
+
+    UpdateStrat --> KnowledgeDB[(Knowledge<br/>Base)]
+    KnowledgeDB --> Task
+
+    Perf[Performance<br/>Improvement] -.->|Emerges| KnowledgeDB
+
+    style Measure fill:#4285f4,color:#fff
+    style KnowledgeDB fill:#34a853,color:#fff
+    style Perf fill:#fbbc04,color:#000
+    style Metrics fill:#ea4335,color:#fff
+```
+
+**Pattern 30: Learning & Adaptation**
+
+Agent continuously improves through experience. Measures outcomes, analyzes results, updates strategy, and learns without redeployment.
+
+**Key Components:**
+- Real-time outcome measurement
+- Success metric evaluation
+- Failure analysis and insight extraction
+- Strategy adaptation
+- Knowledge base persistence
+- Continuous improvement loop
+
+**Business Value:**
+- 2-3x performance improvement over time
+- Autonomous optimization
+- Reduced manual intervention
+- Adaptive to changing conditions
+- Compounds with scale

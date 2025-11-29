@@ -1,0 +1,40 @@
+```mermaid
+graph TD
+    ProbSpace[Problem Space] --> HypGen[Hypothesis<br/>Generation]
+    HypGen --> DivSol[Generate Diverse<br/>Solutions]
+    DivSol --> SafeTest[Safe Testing<br/>Environment]
+    SafeTest --> Eval[Evaluation Against<br/>Criteria]
+
+    Eval --> Discovery{Novel<br/>Discovery?}
+
+    Discovery -->|Yes| Incorp[Incorporate New<br/>Knowledge]
+    Discovery -->|No| Explore[Continue<br/>Exploring]
+
+    Explore --> HypGen
+
+    Incorp --> Expand[Expanded<br/>Capabilities]
+
+    style HypGen fill:#4285f4,color:#fff
+    style Discovery fill:#fbbc04,color:#000
+    style Expand fill:#34a853,color:#fff
+    style SafeTest fill:#ea4335,color:#fff
+```
+
+**Pattern 31: Exploration & Discovery**
+
+Agents venture beyond programmed boundaries to generate and test hypotheses. Enables breakthrough discoveries in complex domains through controlled exploration.
+
+**Key Components:**
+- Hypothesis generation system
+- Diverse solution exploration
+- Safe testing isolation
+- Evaluation metrics
+- Discovery detection
+- Knowledge incorporation
+
+**Business Value:**
+- Breakthrough discoveries humans would miss
+- Non-obvious pattern identification
+- Innovation at scale
+- Patent-worthy insights
+- Exponential ROI from single discovery

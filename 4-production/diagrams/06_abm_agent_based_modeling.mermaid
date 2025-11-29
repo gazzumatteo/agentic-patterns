@@ -1,0 +1,48 @@
+```mermaid
+graph TB
+    subgraph MarketSim["Market Simulation Environment"]
+        S1["Supplier<br/>Agent 1"] -.->|Trade| M1["Manufacturer<br/>Agent 1"]
+        S2["Supplier<br/>Agent 2"] -.->|Trade| M1
+        S3["Supplier<br/>Agent 3"] -.->|Trade| M2["Manufacturer<br/>Agent 2"]
+
+        M1 -.->|Ship| D1["Distributor<br/>Agent 1"]
+        M2 -.->|Ship| D1
+        M1 -.->|Ship| D2["Distributor<br/>Agent 2"]
+
+        D1 -.->|Sell| R1["Retailer<br/>Agent 1"]
+        D2 -.->|Sell| R2["Retailer<br/>Agent 2"]
+    end
+
+    Emerge[Emergent Market<br/>Dynamics] -.->|Observable| MarketSim
+    Disrupt[Disruption<br/>Scenario] -->|Inject| S2
+    Cascade[Cascade<br/>Effects] -.->|Measured| MarketSim
+
+    MarketSim --> Analyze[Analyze System<br/>Behavior]
+    Analyze --> Insights[Strategic<br/>Insights]
+
+    style Emerge fill:#34a853,color:#fff
+    style Disrupt fill:#ea4335,color:#fff
+    style Cascade fill:#fbbc04,color:#000
+    style Insights fill:#4285f4,color:#fff
+```
+
+**Pattern 35: Agent-Based Modeling (ABM)**
+
+Simulates complex systems through interacting agents. Reveals emergent behaviors and non-obvious system dynamics through multi-agent interaction.
+
+**Key Components:**
+- Multi-tier agent ecosystem
+- Simple individual agent rules
+- Trade/interaction networks
+- Emergent system behaviors
+- Disruption scenario injection
+- Cascade effect measurement
+- System-level analysis
+
+**Business Value:**
+- Identify critical single points of failure
+- Test scenarios without real-world risk
+- Optimize inventory and routing
+- Prevent $200M+ losses
+- Uncover non-intuitive optimizations
+- Risk assessment at scale

@@ -1,0 +1,47 @@
+```mermaid
+graph TB
+    Start[Task/Requirement] --> Maker[Maker Agent<br/>Creator]
+
+    Maker --> Generate[Generate<br/>Artifact]
+    Generate --> Submit[Submit for<br/>Review]
+
+    Submit --> Checker[Checker Agent<br/>Validator]
+
+    Checker --> Validate[Validate Against<br/>Criteria]
+    Validate --> Decision{Quality &<br/>Compliance<br/>Check}
+
+    Decision -->|Approved| Approved[Artifact<br/>Approved]
+    Decision -->|Feedback| Feedback[Generate<br/>Feedback]
+
+    Feedback --> Notify[Notify Maker]
+    Notify --> Revise[Revise Based<br/>on Feedback]
+    Revise --> Maker
+
+    Approved --> Deploy[Deploy/<br/>Execute]
+    Deploy --> Audit[Create Audit<br/>Trail]
+    Audit --> Complete[Process<br/>Complete]
+
+    style Maker fill:#4285f4,color:#fff
+    style Checker fill:#ea4335,color:#fff
+    style Approved fill:#34a853,color:#fff
+    style Audit fill:#fbbc04,color:#000
+```
+
+**Pattern 34: Maker-Checker Loop**
+
+Formal verification pattern with strict turn-based creation and validation. Essential for high-stakes domains requiring accuracy and compliance.
+
+**Key Components:**
+- Maker agent for artifact creation
+- Checker agent for validation
+- Multi-criteria evaluation
+- Iterative refinement loops
+- Audit trail generation
+- Quality enforcement
+
+**Business Value:**
+- 97% reduction in violations
+- 10x faster deployment (2 weeks → 2 days)
+- 100% audit success rate
+- Legal/regulatory compliance assured
+- Prevents costly mistakes

@@ -1,0 +1,45 @@
+```mermaid
+graph TD
+    InitPop[Initial Population<br/>100 Agents] --> Execution[Task Execution]
+    Execution --> PerfEval[Performance<br/>Evaluation]
+
+    PerfEval --> Selection{Selection<br/>Criteria}
+
+    Selection -->|Top 20%| Elite[Elite Agents<br/>Selected]
+    Selection -->|Bottom 80%| Eliminate[Eliminated]
+
+    Elite --> Crossover[Crossover<br/>Genetic Exchange]
+    Crossover --> Mutation[Mutation<br/>Random Variation]
+
+    Mutation --> NewGen[New Generation<br/>Created]
+
+    NewGen --> GenCounter{Generation<br/>Limit?}
+
+    GenCounter -->|Continue| Execution
+    GenCounter -->|Complete| Optimal[Optimal Solution<br/>Emerges]
+
+    style Selection fill:#ea4335,color:#fff
+    style Elite fill:#34a853,color:#fff
+    style Optimal fill:#fbbc04,color:#000
+    style Mutation fill:#4285f4,color:#fff
+```
+
+**Pattern 32: Evolutionary Curriculum Agent**
+
+Population-based evolution of agent strategies. Multiple variants compete, successful traits propagate, optimal solutions emerge through generational improvement.
+
+**Key Components:**
+- Initial population diversity
+- Objective task execution
+- Performance-based selection
+- Elite preservation
+- Genetic crossover
+- Mutation operators
+- Generational evolution
+
+**Business Value:**
+- Solutions humans wouldn't design
+- Pareto-optimal strategy discovery
+- Handles multi-objective optimization
+- Robust to local minima
+- Proven 2x+ improvement vs baseline
